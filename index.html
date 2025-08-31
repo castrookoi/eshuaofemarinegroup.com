@@ -24,7 +24,7 @@
     <title>Eshua Ofe Marine Limited - Oil, Gas, and Infrastructure Solutions</title>
     <!-- Tailwind CSS (Local) -->
     <link rel="stylesheet" href="tailwind.min.css">
-    <!-- Font Awesome CDN for services section icons -->
+    <!-- Font Awesome CDN for services and social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -44,7 +44,9 @@
         },
         "sameAs": [
             "https://www.linkedin.com/company/eshuaofemarine",
-            "https://twitter.com/eshuaofemarine"
+            "https://twitter.com/eshuaofemarine",
+            "https://www.facebook.com/eshuaofemarine",
+            "https://www.instagram.com/eshuaofemarine"
         ]
     }
     </script>
@@ -52,9 +54,19 @@
         body {
             margin: 0;
         }
+        /* Header styles */
+        header {
+            background: white;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 4px rgba(7, 70, 114, 0.5);
+        }
+        header.transparent-white {
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
         /* Overlay animation */
         #overlay {
-            background-color: rgba(12, 23, 77, 0.5);
+            background-color: rgba(7, 70, 114, 0.5);
             transform: translateX(100%);
             opacity: 0;
             display: none;
@@ -76,13 +88,13 @@
             opacity: 1;
             display: block;
         }
-        /* Button styles (used for all buttons, including Services section) */
+        /* Button styles */
         .gradient-btn {
             display: inline-block;
             padding: 0.5rem 1rem;
             font-weight: bold;
             color: white;
-            background: linear-gradient(to bottom, #c1160e, #012640);
+            background: linear-gradient(to bottom, #F70622, #074672);
             border-radius: 2rem;
             cursor: pointer;
             transition: transform 0.2s ease, opacity 0.2s ease;
@@ -92,8 +104,28 @@
             transform: scale(1.03);
             opacity: 0.95;
         }
+        /* Square buttons for About Us */
+        .square-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            font-weight: bold;
+            color: white;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+            text-align: center;
+        }
+        .square-btn:hover {
+            background: white;
+            color: #074672;
+        }
+        .square-btn:active {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
         @media (max-width: 767px) {
-            .gradient-btn {
+            .gradient-btn, .square-btn {
                 width: auto;
                 max-width: 200px;
                 display: inline-block;
@@ -143,7 +175,7 @@
             transition: background-color 0.2s ease;
         }
         .nav-item:hover {
-            background-color: rgba(1, 38, 64, 0.1);
+            background-color: rgba(7, 70, 114, 0.1);
         }
         /* Hero section background */
         .hero-bg {
@@ -163,7 +195,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom right, rgba(193, 22, 14, 0.8), rgba(1, 38, 64, 0.8));
+            background: linear-gradient(to bottom right, rgba(247, 6, 34, 0.8), rgba(7, 70, 114, 0.8));
             z-index: 2;
         }
         .hero-bg > * {
@@ -177,9 +209,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* For video and image */
-            background-size: cover; /* For static image */
-            background-position: center; /* For static image */
+            object-fit: cover;
+            background-size: cover;
+            background-position: center;
             opacity: 0;
             visibility: hidden;
             transition: opacity 1s ease-in-out;
@@ -188,6 +220,16 @@
         .hero-bg-inner.active {
             opacity: 1;
             visibility: visible;
+        }
+        .hero-bg-inner video {
+            pointer-events: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
         }
         /* Hero section animation */
         .hero-text {
@@ -245,11 +287,11 @@
                 padding-top: 1.5rem;
             }
             .stats-item h2 {
-                font-size: 1.25rem; /* text-xl */
+                font-size: 1.25rem;
                 text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
             }
             .stats-item p {
-                font-size: 0.875rem; /* text-sm */
+                font-size: 0.875rem;
                 text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
             }
         }
@@ -276,11 +318,11 @@
                 grid-template-columns: repeat(2, 1fr);
             }
             .stats-item h2 {
-                font-size: 1.5rem; /* text-2xl */
+                font-size: 1.5rem;
                 text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
             }
             .stats-item p {
-                font-size: 0.875rem; /* text-sm */
+                font-size: 0.875rem;
                 text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
             }
         }
@@ -302,7 +344,7 @@
             transform: scale(1.05);
         }
         .stats-item.global-clients {
-            border-color: #ff0000;
+            border-color: #F70622;
         }
         .stats-item:not(.global-clients) {
             border-color: #000000;
@@ -317,7 +359,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
-            align-items: start; /* Align tops of text and image */
+            align-items: start;
         }
         .growth-section .text-container {
             text-align: left;
@@ -325,7 +367,7 @@
             border-radius: 0.5rem;
             padding: 1.5rem;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            max-width: 600px; /* Expanded width to match image */
+            max-width: 600px;
             height: auto;
         }
         .growth-section img {
@@ -337,19 +379,19 @@
             border-radius: 0.5rem;
             border: 1px solid #e5e7eb;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-top: -1rem; /* Move image up slightly on desktop */
+            margin-top: -1rem;
         }
         .growth-section h3 {
-            font-size: 1.875rem; /* text-3xl */
-            font-weight: 800; /* font-extrabold */
+            font-size: 1.875rem;
+            font-weight: 800;
             margin: 0 0 1rem;
             color: #1f2937;
         }
         .growth-section p {
             max-width: 600px;
             margin: 0 0 1.5rem;
-            color: #4b5563; /* text-gray-600 */
-            font-size: 1rem; /* text-base */
+            color: #4b5563;
+            font-size: 1rem;
             line-height: 1.75;
         }
         @media (max-width: 767px) {
@@ -370,13 +412,13 @@
                 order: 1;
                 max-width: 100%;
                 max-height: 300px;
-                margin-top: 0; /* No upward shift on mobile */
+                margin-top: 0;
             }
             .growth-section h3 {
-                font-size: 1.5rem; /* text-2xl */
+                font-size: 1.5rem;
             }
             .growth-section p {
-                font-size: 0.875rem; /* text-sm */
+                font-size: 0.875rem;
                 max-width: 100%;
                 line-height: 1.5;
             }
@@ -386,8 +428,8 @@
             display: none;
         }
         .no-scrollbar {
-            -ms-overflow-style: none; /* IE and Edge */
-            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
         .logo-slider-container {
             position: relative;
@@ -416,7 +458,7 @@
             object-fit: contain;
             margin: 0 auto;
         }
-        /* Animation for Clientele (right to left) */
+        /* Animation for Clientele */
         .client-slider {
             animation: slideRightToLeft 60s linear infinite;
         }
@@ -431,36 +473,81 @@
                 transform: translateX(-50%);
             }
         }
-        
         /* Services Section Animations */
+        .fly-in {
+            opacity: 0;
+            transform: translateY(100px);
+        }
+        .animate-fly-in {
+            animation: flyIn 0.6s ease-out forwards;
+        }
         @keyframes flyIn {
             0% {
-                transform: translateY(100vh) scale(0.5);
+                transform: translateY(100px);
                 opacity: 0;
             }
             100% {
-                transform: translateY(0) scale(1);
+                transform: translateY(0);
                 opacity: 1;
             }
         }
-        .fly-in {
-            animation: flyIn 0.6s ease-out forwards;
+        .group {
+            overflow: hidden;
+            position: relative;
         }
-        .fly-in:nth-child(1) { animation-delay: 0.1s; }
-        .fly-in:nth-child(2) { animation-delay: 0.2s; }
-        .fly-in:nth-child(3) { animation-delay: 0.3s; }
-        .fly-in:nth-child(4) { animation-delay: 0.4s; }
+        .group .absolute.inset-0.bg-cover {
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.3s ease;
+        }
+        .group:hover .absolute.inset-0.bg-cover {
+            transform: scale(1.05);
+        }
         .card-emphasis {
             transform: scale(1.05);
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        /* About Section */
+        #about {
+            background-color: #074672;
+            color: white;
+        }
+        #about h3, #about p {
+            color: white;
+        }
+        /* Social Media Section */
+        .social-section {
+            background-color: #074672;
+            color: white;
+            padding: 2rem 0;
+        }
+        .social-section a {
+            color: white;
+            transition: color 0.2s ease;
+        }
+        .social-section a:hover {
+            color: #F70622;
+        }
+        /* Footer */
+        footer {
+            background-color: #074672;
+            color: white;
+            padding: 2rem 0;
+        }
+        footer a {
+            color: white;
+            transition: color 0.2s ease;
+        }
+        footer a:hover {
+            color: #F70622;
         }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
 
 <!-- Header -->
-<header class="bg-white fixed top-0 left-0 w-full z-50" style="box-shadow: 0 2px 4px #012640;">
+<header class="fixed top-0 left-0 w-full z-50">
     <div class="w-full flex justify-between items-center py-1 px-4">
         <img src="./images/logo_name.png" alt="Eshua Ofe Marine Limited Logo" class="ml-0 object-contain h-14 max-w-[225px] sm:h-20 sm:max-w-[450px] md:h-35 md:max-w-[540px] lg:h-25 lg:max-w-[600px]" />
         <button id="menuBtn" class="md:hidden text-3xl focus:outline-none cursor-pointer" aria-label="Open menu" aria-expanded="false">☰</button>
@@ -503,10 +590,10 @@
             </svg>
         </a>
         <div id="mobileServicesMenu" class="flex flex-col space-y-2 pl-4 hidden">
-                    <a href="#" class="hover:bg-gray-100 hover:text-blue-600">Ship Brokerage & Chartering</a>
-                    <a href="#" class="hover:bg-gray-100 hover:text-blue-600">Marine Logistics and Consultancy</a>
-                    <a href="#" class="hover:bg-gray-100 hover:text-blue-600">Offshore Support</a>
-                    <a href="#" class="hover:bg-gray-100 hover:text-blue-600">Procurement & Logistics</a>
+            <a href="#" class="hover:bg-gray-100 hover:text-blue-600">Ship Brokerage & Chartering</a>
+            <a href="#" class="hover:bg-gray-100 hover:text-blue-600">Marine Logistics and Consultancy</a>
+            <a href="#" class="hover:bg-gray-100 hover:text-blue-600">Offshore Support</a>
+            <a href="#" class="hover:bg-gray-100 hover:text-blue-600">Procurement & Logistics</a>
         </div>
         <a href="#contact" class="nav-item hover:text-blue-600">Contact us</a>
         <a href="https://example.com/profile" class="gradient-btn">Company Profile</a>
@@ -515,14 +602,14 @@
 
 <!-- Hero Section -->
 <section class="hero-bg text-white text-center px-6 py-24">
-    <video id="heroBgInner1" class="hero-bg-inner" autoplay loop muted playsinline>
+    <video id="heroBgInner1" class="hero-bg-inner" autoplay loop muted playsinline preload="auto" poster="none">
         <source src="./Videos/marine-bg.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     <div class="hero-bg-inner" id="heroBgInner2" style="background-image: url('./images/second_hero.jpg');"></div>
     <div class="w-full max-w-5xl mx-auto px-6 md:px-12 lg:px-20">
         <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight hero-text">
-          Redefining Marine and Offshore Excellence Across Global Waters.
+            Redefining Marine and Offshore Excellence Across Global Waters.
         </h1>
         <p class="mt-4 text-sm sm:text-base md:text-lg lg:text-lg text-gray-200 max-w-3xl mx-auto hero-subtext">
             We provide integrated and reliable services that connect clients with best marine resources, delivering value, safety, and operational success in every project.
@@ -537,8 +624,8 @@
 <section class="next-hero-section">
     <div class="stats-container">
         <div class="stats-item global-clients flex flex-col items-center">
-            <p class="font-bold" style="color: #ff0000;">Global Clients</p>
-            <h2 class="font-extrabold counter" data-target="120" style="color: #ff0000;">0+</h2>
+            <p class="font-bold" style="color: #F70622;">Global Clients</p>
+            <h2 class="font-extrabold counter" data-target="120" style="color: #F70622;">0+</h2>
         </div>
         <div class="stats-item flex flex-col items-center">
             <p class="font-bold" style="color: #000000;">Projects Executed</p>
@@ -560,8 +647,7 @@
     <div class="text-container">
         <h3>Navigating Success, Anchoring Trust in Marine Solutions</h3>
         <p>Eshua Ofe Marine Limited specializes in providing a full spectrum of expert marine solutions tailored to the dynamic needs of the maritime and offshore industries. Our core services include ship brokerage and chartering, offshore support, marine logistics, marine consultancy, and procurement.
-            
-            <br> With a steadfast commitment to excellence, innovation, and sustainability, we empower our clients to optimize operational efficiency and enhance reliability in their maritime ventures. Our customized, client-focused approach ensures seamless project execution and supports sustainable growth in an ever-evolving marine environment..</p>
+            <br> With a steadfast commitment to excellence, innovation, and sustainability, we empower our clients to optimize operational efficiency and enhance reliability in their maritime ventures. Our customized, client-focused approach ensures seamless project execution and supports sustainable growth in an ever-evolving marine environment.</p>
         <a href="#services" class="gradient-btn">Explore More</a>
     </div>
     <img src="./images/offshore_support.jpg" alt="Oil and Gas Infrastructure" />
@@ -573,15 +659,15 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
         <!-- Ship Brokerage & Chartering -->
         <div class="relative h-96 rounded-3xl overflow-hidden shadow-lg group fly-in">
-            <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-95 transition-transform duration-300"
+            <div class="absolute inset-0 bg-cover bg-center transform transition-transform duration-300"
                  style="background-image: url('./Images/background_shipBrokerage.png')"
-                 role="img" aria-label="Upstream Operations Image">
+                 role="img" aria-label="Ship Brokerage Image">
             </div>
             <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-between p-6 text-white">
                 <div>
                     <h4 class="text-2xl font-semibold mb-2 text-white">Ship Brokerage & Chartering</h4>
                     <p class="text-sm opacity-75 leading-relaxed text-white">
-                        We Serve as a Trusted Link between vessel owners and cargo interests, offering tailored brokerage and chartering solutions. From spot and time charters to long-term agreements, we ensure the right vessels are secured at competitive rates, supported by market knowledge and strong negotiation expertise.
+                        We serve as a trusted link between vessel owners and cargo interests, offering tailored brokerage and chartering solutions. From spot and time charters to long-term agreements, we ensure the right vessels are secured at competitive rates, supported by market knowledge and strong negotiation expertise.
                     </p>
                 </div>
                 <div class="flex justify-end items-center space-x-4">
@@ -592,15 +678,15 @@
         </div>
         <!-- Marine Logistics and Consultancy -->
         <div class="relative h-96 rounded-3xl overflow-hidden shadow-lg group fly-in">
-            <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-95 transition-transform duration-300"
-                 style="background-image: url('/Images/marine_logistics.png')"
-                 role="img" aria-label="Ship Brokerage">
+            <div class="absolute inset-0 bg-cover bg-center transform transition-transform duration-300"
+                 style="background-image: url('./Images/marine_logistics.jpg')"
+                 role="img" aria-label="Marine Logistics Image">
             </div>
             <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-between p-6 text-white">
                 <div>
                     <h4 class="text-2xl font-semibold mb-2 text-white">Marine Logistics & Consultancy</h4>
                     <p class="text-sm opacity-75 leading-relaxed text-white">
-                        Our team provides complete marine logistics support, from planning and coordination to execution. through consultancy, we help clients navigate complex operational and regulatory requirements while improving efficiency, safety, and cost-effectiveness in their marine projects.
+                        Our team provides complete marine logistics support, from planning and coordination to execution. Through consultancy, we help clients navigate complex operational and regulatory requirements while improving efficiency, safety, and cost-effectiveness in their marine projects.
                     </p>
                 </div>
                 <div class="flex justify-end items-center space-x-4">
@@ -611,15 +697,15 @@
         </div>
         <!-- Procurement and Logistics -->
         <div class="relative h-96 rounded-3xl overflow-hidden shadow-lg group fly-in">
-            <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-95 transition-transform duration-300"
+            <div class="absolute inset-0 bg-cover bg-center transform transition-transform duration-300"
                  style="background-image: url('./Images/Procurement.jpg')"
-                 role="img" aria-label="Procurement">
+                 role="img" aria-label="Procurement Image">
             </div>
             <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-between p-6 text-white">
                 <div>
                     <h4 class="text-2xl font-semibold mb-2 text-white">Procurement</h4>
                     <p class="text-sm opacity-75 leading-relaxed text-white">
-                    We offer reliable procurement solutions that cover sourcing, vendor management and timely supply of equipment, spare parts, and project materials. with a strong network of trusted partners, we ensure cost-effective solutions and seamless delivery that support the smooth execution of client operations.
+                        We offer reliable procurement solutions that cover sourcing, vendor management, and timely supply of equipment, spare parts, and project materials. With a strong network of trusted partners, we ensure cost-effective solutions and seamless delivery that support the smooth execution of client operations.
                     </p>
                 </div>
                 <div class="flex justify-end items-center space-x-4">
@@ -628,17 +714,17 @@
                 </div>
             </div>
         </div>
-        <!-- Infrastructural Services Card -->
+        <!-- Offshore Support -->
         <div class="relative h-96 rounded-3xl overflow-hidden shadow-lg group fly-in">
-            <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-95 transition-transform duration-300"
+            <div class="absolute inset-0 bg-cover bg-center transform transition-transform duration-300"
                  style="background-image: url('./Images/offshore_support.jpg')"
-                 role="img" aria-label="Infrastructural Services Image">
+                 role="img" aria-label="Offshore Support Image">
             </div>
             <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-between p-6 text-white">
                 <div>
                     <h4 class="text-2xl font-semibold mb-2 text-white">Offshore Support</h4>
                     <p class="text-sm opacity-75 leading-relaxed text-white">
-                       We provide dependable offshore support services designed to keep marine and energy operations running efficiently. from vessel supply and crew transfer to offshore logistics coordination, our expertise ensures safe, seamless and uninterrupted offshore activities.
+                        We provide dependable offshore support services designed to keep marine and energy operations running efficiently. From vessel supply and crew transfer to offshore logistics coordination, our expertise ensures safe, seamless, and uninterrupted offshore activities.
                     </p>
                 </div>
                 <div class="flex justify-end items-center space-x-4">
@@ -683,11 +769,38 @@
 </div>
 
 <!-- About Section -->
-<section id="about" class="py-16 bg-gray-100 text-center px-6">
+<section id="about" class="py-16 text-center px-6">
     <h3 class="text-3xl font-bold mb-6">About Us</h3>
     <p class="max-w-2xl mx-auto">
-        <strong>Eshua Ofe Marine Limited (EOML) RC: 7281334</strong> is a premier, fully registered indigenous Nigerian company dedicated to delivering innovative, reliable, and secure marine logistics and offshore services. Committed to excellence, we prioritize quality, client satisfaction, and adherence to industry best practices. Our comprehensive solutions encompass marine transportation, ship brokerage and chartering, offshore support, and marine consultancy, tailored to meet the evolving demands of Nigeria’s oil and gas, shipping, and offshore sectors. Strategically positioned in key coastal hubs—Port Harcourt, Cross River, and Lagos—EOML ensures swift and efficient service delivery across the Gulf of Guinea and inland waterways. Our team of seasoned maritime professionals, engineers, and logistics experts brings unparalleled expertise, technical proficiency, and a steadfast commitment to operational excellence. Leveraging an expanding fleet, strategic industry partnerships, and full regulatory compliance, we provide scalable, sustainable solutions that address the complexities of modern marine operations with innovation and integrity. At Eshua Ofe Marine Limited, we are more than service providers—we are trusted partners driving the success of Nigeria’s blue economy and your offshore endeavors.
+        Eshua Ofe Marine Limited (EOML) is an indigenous Nigerian company providing innovative and reliable marine solutions. We specialize in ship brokerage, marine logistics and consultancy, procurement, and offshore support services, delivering excellence with integrity and industry best practices.
+        <br><br>
+        With offices in Port Harcourt, Cross River, and Lagos, we ensure swift service across the Gulf of Guinea and inland waterways. Our team of seasoned maritime professionals and engineers combines technical expertise with a commitment to operational efficiency, helping clients navigate the complexities of marine operations.
     </p>
+    <div class="mt-6 flex justify-center space-x-4">
+        <a href="#services" class="square-btn">Explore More</a>
+        <a href="#contact" class="square-btn">Get a Quote</a>
+    </div>
+</section>
+
+<!-- Social Media Section -->
+<section class="social-section text-center">
+    <div class="container mx-auto px-6">
+        <h3 class="text-2xl font-bold mb-4">Follow Us</h3>
+        <div class="flex justify-center space-x-4">
+            <a href="https://www.linkedin.com/company/eshuaofemarine" target="_blank" aria-label="Follow us on LinkedIn">
+                <i class="fab fa-linkedin-in text-2xl"></i>
+            </a>
+            <a href="https://twitter.com/eshuaofemarine" target="_blank" aria-label="Follow us on Twitter">
+                <i class="fab fa-twitter text-2xl"></i>
+            </a>
+            <a href="https://www.facebook.com/eshuaofemarine" target="_blank" aria-label="Follow us on Facebook">
+                <i class="fab fa-facebook-f text-2xl"></i>
+            </a>
+            <a href="https://www.instagram.com/eshuaofemarine" target="_blank" aria-label="Follow us on Instagram">
+                <i class="fab fa-instagram text-2xl"></i>
+            </a>
+        </div>
+    </div>
 </section>
 
 <!-- Contact Section -->
@@ -702,8 +815,19 @@
 </section>
 
 <!-- Footer -->
-<footer class="bg-blue-800 text-white text-center py-6">
-    <p>&copy; 2025 Eshua Ofe Marine Limited. All rights reserved.</p>
+<footer class="text-center">
+    <div class="container mx-auto px-6">
+        <nav class="flex justify-center space-x-6 mb-4">
+            <a href="#home" class="hover:text-red-600">Home</a>
+            <a href="#about" class="hover:text-red-600">About Us</a>
+            <a href="#services" class="hover:text-red-600">Services</a>
+            <a href="#contact" class="hover:text-red-600">Contact Us</a>
+        </nav>
+        <p>&copy; 2025 Eshua Ofe Marine Limited. All rights reserved.</p>
+        <div class="mt-4">
+            <img src="./images/logo_name.png" alt="Eshua Ofe Marine Limited Logo" class="mx-auto h-12 object-contain" />
+        </div>
+    </div>
 </footer>
 
 <script>
@@ -766,25 +890,25 @@
     });
 
     // Background crossfade for hero section
-    const heroBgInner1 = document.getElementById('heroBgInner1'); // Video element
-    const heroBgInner2 = document.getElementById('heroBgInner2'); // Image div
+    const heroBgInner1 = document.getElementById('heroBgInner1');
+    const heroBgInner2 = document.getElementById('heroBgInner2');
     let isFirstActive = true;
 
     function changeBackground() {
         if (isFirstActive) {
             heroBgInner1.classList.remove('active');
             heroBgInner2.classList.add('active');
-            heroBgInner1.pause(); // Pause video when inactive
-            setTimeout(changeBackground, 4000); // Static image stays for 4 seconds
+            heroBgInner1.pause();
+            setTimeout(changeBackground, 4000);
         } else {
             heroBgInner2.classList.remove('active');
             heroBgInner1.classList.add('active');
             setTimeout(() => {
                 heroBgInner1.play().catch(error => {
                     console.error('Video playback failed:', error);
-                }); // Play video with 2-second delay when active
-            }, 2000); // 2-second delay for video playback
-            setTimeout(changeBackground, 8000); // Video stays for 8 seconds
+                });
+            }, 2000);
+            setTimeout(changeBackground, 8000);
         }
         isFirstActive = !isFirstActive;
     }
@@ -796,26 +920,15 @@
         document.querySelector('.next-hero-section').style.backgroundPositionY = `${translateY}px`;
     });
 
-    // Services section card emphasis effect
-    document.querySelectorAll('.fly-in').forEach(card => {
-        card.addEventListener('click', () => {
-            document.querySelectorAll('.fly-in').forEach(c => c.classList.remove('card-emphasis'));
-            card.classList.add('card-emphasis');
-            setTimeout(() => {
-                card.classList.remove('card-emphasis');
-            }, 1000);
-        });
-    });
-
     document.addEventListener('DOMContentLoaded', () => {
         // Start background alternation with delayed video playback
         heroBgInner1.classList.add('active');
         setTimeout(() => {
             heroBgInner1.play().catch(error => {
                 console.error('Initial video playback failed:', error);
-            }); // Start video with 2-second delay
-        }, 2000); // 2-second delay for initial playback
-        setTimeout(changeBackground, 8000); // Initial video stays for 8 seconds
+            });
+        }, 2000);
+        setTimeout(changeBackground, 8000);
 
         // Counter animation
         const counters = document.querySelectorAll('.counter');
@@ -834,6 +947,60 @@
                 }
             };
             updateCounter();
+        });
+
+        // Services section card animation on scroll
+        const cards = document.querySelectorAll('.fly-in');
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('animate-fly-in');
+                        }, index * 100);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: 0.2,
+            }
+        );
+        cards.forEach(card => {
+            observer.observe(card);
+        });
+
+        // Card emphasis effect on click
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                cards.forEach(c => c.classList.remove('card-emphasis'));
+                card.classList.add('card-emphasis');
+                setTimeout(() => {
+                    card.classList.remove('card-emphasis');
+                }, 1000);
+            });
+        });
+
+        // Header background change on scroll
+        const header = document.querySelector('header');
+        const darkSections = document.querySelectorAll('#services');
+        const headerObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        header.classList.add('transparent-white');
+                    } else {
+                        header.classList.remove('transparent-white');
+                    }
+                });
+            },
+            {
+                threshold: 0.1,
+                rootMargin: '-80px 0px 0px 0px'
+            }
+        );
+        darkSections.forEach(section => {
+            headerObserver.observe(section);
         });
     });
 </script>
