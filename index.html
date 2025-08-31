@@ -510,11 +510,24 @@
         }
         /* About Section */
         #about {
-            background-color: #074672;
-            color: white;
+            position: relative;
+            overflow: hidden;
+            background-color: #074672; /* Keep the solid blue background */
+            color: #fff;
         }
-        #about h3, #about p {
-            color: white;
+        #about::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url('./Images/second_hero.jpg') center center/cover no-repeat;
+            opacity: 0.06; /* Adjust for subtlety */
+            pointer-events: none;
+            z-index: 0;
+            mix-blend-mode: lighten; /* Helps blend with blue */
+        }
+        #about > * {
+            position: relative;
+            z-index: 1;
         }
         /* Social Media Section */
         .social-section {
@@ -542,6 +555,29 @@
         footer a:hover {
             color: #F70622;
         }
+
+        footer > div:last-child i {
+    color: #074672 !important;
+    transition: color 0.2s;
+}
+footer > div:last-child i:hover {
+    color: #F70622 !important;
+}
+        .fly-in:hover, .fly-in:focus {
+    box-shadow: 0 0 24px 6px #F70622, 0 0 40px 12px #07467233;
+    z-index: 2;
+    transition: box-shadow 0.3s;
+}
+.footer-contact-link {
+    color: #074672 !important;
+    font-weight: bold;
+    word-break: break-all;
+    transition: color 0.2s;
+}
+.footer-contact-link:hover {
+    color: #F70622 !important;
+    text-decoration: underline;
+}
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
@@ -612,7 +648,7 @@
             Redefining Marine and Offshore Excellence Across Global Waters.
         </h1>
         <p class="mt-4 text-sm sm:text-base md:text-lg lg:text-lg text-gray-200 max-w-3xl mx-auto hero-subtext">
-            We provide integrated and reliable services that connect clients with best marine resources, delivering value, safety, and operational success in every project.
+            We provide integrated and reliable services that connect clients with best marine resources, delivering values, safety, and operational success in every project.
         </p>
         <div class="mt-6 hero-button">
             <a href="#services" class="gradient-btn">Explore More</a>
@@ -774,32 +810,11 @@
     <p class="max-w-2xl mx-auto">
         Eshua Ofe Marine Limited (EOML) is an indigenous Nigerian company providing innovative and reliable marine solutions. We specialize in ship brokerage, marine logistics and consultancy, procurement, and offshore support services, delivering excellence with integrity and industry best practices.
         <br><br>
-        With offices in Port Harcourt, Cross River, and Lagos, we ensure swift service across the Gulf of Guinea and inland waterways. Our team of seasoned maritime professionals and engineers combines technical expertise with a commitment to operational efficiency, helping clients navigate the complexities of marine operations.
+        Our team of seasoned maritime professionals and engineers combines technical expertise with a commitment to operational efficiency, helping clients navigate the complexities of marine operations.
     </p>
     <div class="mt-6 flex justify-center space-x-4">
         <a href="#services" class="square-btn">Explore More</a>
         <a href="#contact" class="square-btn">Get a Quote</a>
-    </div>
-</section>
-
-<!-- Social Media Section -->
-<section class="social-section text-center">
-    <div class="container mx-auto px-6">
-        <h3 class="text-2xl font-bold mb-4">Follow Us</h3>
-        <div class="flex justify-center space-x-4">
-            <a href="https://www.linkedin.com/company/eshuaofemarine" target="_blank" aria-label="Follow us on LinkedIn">
-                <i class="fab fa-linkedin-in text-2xl"></i>
-            </a>
-            <a href="https://twitter.com/eshuaofemarine" target="_blank" aria-label="Follow us on Twitter">
-                <i class="fab fa-twitter text-2xl"></i>
-            </a>
-            <a href="https://www.facebook.com/eshuaofemarine" target="_blank" aria-label="Follow us on Facebook">
-                <i class="fab fa-facebook-f text-2xl"></i>
-            </a>
-            <a href="https://www.instagram.com/eshuaofemarine" target="_blank" aria-label="Follow us on Instagram">
-                <i class="fab fa-instagram text-2xl"></i>
-            </a>
-        </div>
     </div>
 </section>
 
@@ -810,7 +825,9 @@
         <input type="text" placeholder="Your Name" class="w-full p-3 border rounded-lg" aria-label="Your Name" />
         <input type="email" placeholder="Your Email" class="w-full p-3 border rounded-lg" aria-label="Your Email" />
         <textarea placeholder="Your Message" class="w-full p-3 border rounded-lg" aria-label="Your Message"></textarea>
-        <button class="w-full gradient-btn">Send</button>
+        <div class="w-full text-center">
+            <button class="gradient-btn" style="width: 70%;">Send</button>
+        </div>
     </form>
 </section>
 
@@ -823,12 +840,53 @@
             <a href="#services" class="hover:text-red-600">Services</a>
             <a href="#contact" class="hover:text-red-600">Contact Us</a>
         </nav>
-        <p>&copy; 2025 Eshua Ofe Marine Limited. All rights reserved.</p>
-        <div class="mt-4">
-            <img src="./Images/logo_name.png" alt="Eshua Ofe Marine Limited Logo" class="mx-auto h-12 object-contain" />
+    </div>
+    <div style="background: #fff; color: #074672; width: 100vw; margin-left: calc(50% - 50vw); padding: 1.5rem 0;">
+        <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+            <div class="flex-shrink-0">
+                <img src="./Images/logo_name.png" alt="Eshua Ofe Marine Limited Logo" class="mx-auto h-12 object-contain" />
+            </div>
+            <div class="flex space-x-4 mt-4 md:mt-0">
+                <a href="https://www.linkedin.com/company/eshuaofemarine" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in text-2xl"></i>
+                </a>
+                <a href="https://twitter.com/eshuaofemarine" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter text-2xl"></i>
+                </a>
+                <a href="https://www.facebook.com/eshuaofemarine" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook-f text-2xl"></i>
+                </a>
+                <a href="https://www.instagram.com/eshuaofemarine" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+            </div>
         </div>
+        <div class="flex flex-col items-center gap-1 mt-6 text-xs md:text-sm" style="line-height:1.3;">
+    <div class="flex items-center gap-2">
+        <i class="fas fa-map-marker-alt text-base text-red-600"></i>
+        <span><strong>Head Office:</strong> #41, 323 Old Refinery Road, Elelenwo, by Lobak Filling Station, Port Harcourt, Rivers State.</span>
+    </div>
+    <div class="flex items-center gap-2">
+        <i class="fas fa-map-marker-alt text-base text-red-600"></i>
+        <span><strong>Head Office:</strong> 11B Old Court Road, Abakpa, Ogoja, Cross Rivers State, Nigeria</span>
+    </div>
+    <div class="flex items-center gap-2">
+        <i class="fas fa-map-marker-alt text-base text-red-600"></i>
+        <span><strong>Branch Office:</strong> The Amasu Igboro Street, Ijanikin, Ojo Local Government Area, Lagos State, Nigeria</span>
+    </div>
+    <div class="flex items-center gap-2">
+        <i class="fas fa-globe text-base text-blue-700"></i>
+        <a href="https://www.eshuaofemarineltd.com" target="_blank" class="hover:underline hover:text-red-600 transition-colors">www.eshuaofemarineltd.com</a>
+    </div>
+    <div class="flex items-center gap-2">
+        <i class="fas fa-envelope text-base text-blue-700"></i>
+        <a href="mailto:info@eshuaofemarineltd.com" class="hover:underline hover:text-red-600 transition-colors">info@eshuaofemarineltd.com</a>
+    </div>
+</div>
+        <p class="mt-4">&copy; 2025 Eshua Ofe Marine Limited. All rights reserved.</p>
     </div>
 </footer>
+
 
 <script>
     const menuBtn = document.getElementById('menuBtn');
@@ -1002,6 +1060,19 @@
         darkSections.forEach(section => {
             headerObserver.observe(section);
         });
+    });
+
+    // Close desktop services dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        // Only run on desktop (md and up)
+        if (window.innerWidth >= 768) {
+            const isToggle = servicesToggle.contains(e.target);
+            const isMenu = servicesMenu.contains(e.target);
+            if (!isToggle && !isMenu && !servicesMenu.classList.contains('hidden')) {
+                servicesMenu.classList.add('hidden');
+                servicesToggle.querySelector('.toggle-indicator').classList.remove('active');
+            }
+        }
     });
 </script>
 </body>
