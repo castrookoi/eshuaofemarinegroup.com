@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Learn about Eshua Ofe Marine Limited, an indigenous Nigerian company delivering innovative marine and offshore solutions with excellence and integrity." />
+    <meta name="keywords" content="Eshua Ofe Marine Limited, marine solutions, ship brokerage, offshore support, marine logistics, Nigeria" />
+    <meta name="author" content="Eshua Ofe Marine Limited" />
+    <meta name="robots" content="index, follow" />
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="About Eshua Ofe Marine Limited - Marine and Offshore Solutions" />
+    <meta property="og:description" content="Discover the story, mission, and expertise of Eshua Ofe Marine Limited, a leader in marine and offshore services in Nigeria." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.eshuaofemarine.com/about.html" />
+    <meta property="og:image" content="https://www.eshuaofemarine.com/images/og-about-image.jpg" />
+    <meta property="og:site_name" content="Eshua Ofe Marine Limited" />
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="About Eshua Ofe Marine Limited - Marine and Offshore Solutions" />
+    <meta name="twitter:description" content="Discover the story, mission, and expertise of Eshua Ofe Marine Limited, a leader in marine and offshore services in Nigeria." />
+    <meta name="twitter:image" content="https://www.eshuaofemarine.com/images/og-about-image.jpg" />
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.eshuaofemarine.com/about.html" />
+    <title>About Us - Eshua Ofe Marine Limited</title>
+    <!-- Tailwind CSS (Local) -->
+    <link rel="stylesheet" href="./tailwind.min.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Eshua Ofe Marine Limited",
+        "description": "Eshua Ofe Marine Limited is an indigenous Nigerian company providing innovative marine solutions, including ship brokerage, marine logistics, procurement, and offshore support services.",
+        "url": "https://www.eshuaofemarine.com/about.html",
+        "logo": "https://www.eshuaofemarine.com/images/logo_name.png",
+        "foundingDate": "2002",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-555-123-4567",
+            "contactType": "Customer Service",
+            "email": "info@eshuaofemarine.com",
+            "areaServed": "Global"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/company/eshuaofemarine",
+            "https://twitter.com/eshuaofemarine",
+            "https://www.facebook.com/eshuaofemarine",
+            "https://www.instagram.com/eshuaofemarine"
+        ]
+    }
+    </script>
+    <style>
+        /* Reuse styles from index.html */
+        body {
+            margin: 0;
+        }
+        header {
+            background: white;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 4px rgba(7, 70, 114, 0.5);
+        }
+        header.transparent-white {
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        #overlay {
+            background-color: rgba(7, 70, 114, 0.5);
+            transform: translateX(100%);
+            opacity: 0;
+            display: none;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        #overlay.active {
+            transform: translateX(0);
+            opacity: 1;
+            display: block;
+        }
+        #mobileMenu {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 0;
+            display: none;
+        }
+        #mobileMenu.active {
+            transform: translate-x-0;
+            opacity: 1;
+            display: block;
+        }
+        .gradient-btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(to bottom, #F70622, #074672);
+            border-radius: 2rem;
+            cursor: pointer;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            text-align: center;
+        }
+        .gradient-btn:hover {
+            transform: scale(1.03);
+            opacity: 0.95;
+        }
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 10px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 0.5rem;
+            padding: 0.5rem 0;
+            min-width: 300px;
+            z-index: 50;
+        }
+        .dropdown-menu.hidden {
+            display: none;
+        }
+        .dropdown-menu a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #1f2937;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+        .dropdown-menu a:hover {
+            background-color: #f3f4f6;
+            color: #2563eb;
+        }
+        .toggle-indicator {
+            display: inline-block;
+            margin-left: 0.25rem;
+            transition: transform 0.2s ease;
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+        }
+        .toggle-indicator.active {
+            transform: rotate(90deg);
+        }
+        .nav-item {
+            background: transparent;
+            transition: background-color 0.2s ease;
+        }
+        .nav-item:hover {
+            background-color: rgba(7, 70, 114, 0.1);
+        }
+        .hero-bg {
+            position: relative;
+            overflow: hidden;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 80px;
+            padding-bottom: 60px;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom right, rgba(247, 6, 34, 0.8), rgba(7, 70, 114, 0.8));
+            z-index: 2;
+        }
+        .hero-bg > * {
+            position: imperial;
+            z-index: 3;
+        }
+        .hero-bg-inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s ease-in-out;
+            z-index: 1;
+        }
+        .hero-bg-inner.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .hero-text {
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .hero-subtext {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 1s ease-out 0.3s forwards;
+        }
+        .hero-button {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 1s ease-out 0.6s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fly-in {
+            opacity: 0;
+            transform: translateY(100px);
+        }
+        .animate-fly-in {
+            animation: flyIn 0.6s ease-out forwards;
+        }
+        @keyframes flyIn {
+            0% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .timeline-container {
+            position: relative;
+            padding: 2rem 0;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 2.5rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0.75rem;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #F70622;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 0.5rem;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            border: 2px solid #F70622;
+            border-radius: 50%;
+        }
+        .team-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .team-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            background-color: #074672;
+            color: white;
+            padding: 2rem 0;
+        }
+        footer a {
+            color: white;
+            transition: color 0.2s ease;
+        }
+        footer a:hover {
+            color: #F70622;
+        }
+        .footer-contact-link {
+            color: #074672 !important;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+        .footer-contact-link:hover {
+            color: #F70622 !important;
+            text-decoration: underline;
+        }
+        .l-accent-top {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 40px;
+            height: 5px;
+            background: #F70622;
+        }
+        .l-accent-left {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 5px;
+            height: 40px;
+            background: #F70622;
+        }
+        @media (max-width: 767px) {
+            .gradient-btn {
+                width: auto;
+                max-width: 200px;
+                display: inline-block;
+                text-align: center;
+            }
+            .timeline-item {
+                padding-left: 2rem;
+            }
+            .timeline-item::before {
+                left: 0.5rem;
+            }
+            .timeline-item::after {
+                left: 0.25rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Header (Reused from index.html) -->
+    <header class="fixed top-0 left-0 w-full z-50">
+        <div class="w-full flex justify-between items-center py-1 px-4">
+            <img src="./Images/logo_name.png" alt="Eshua Ofe Marine Limited Logo" class="ml-0 object-contain h-14 max-w-[225px] sm:h-20 sm:max-w-[450px] md:h-35 md:max-w-[540px] lg:h-25 lg:max-w-[600px]" />
+            <button id="menuBtn" class="md:hidden text-3xl focus:outline-none cursor-pointer" aria-label="Open menu" aria-expanded="false">☰</button>
+            <nav class="hidden md:flex space-x-6 items-center ml-auto mr-0">
+                <a href="index.html#home" class="nav-item hover:text-blue-600">Home</a>
+                <a href="#about" class="nav-item hover:text-blue-600">About us</a>
+                <div class="relative">
+                    <a href="#" class="nav-item hover:text-blue-600" id="servicesToggle">Services
+                        <svg class="toggle-indicator" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </a>
+                    <div class="dropdown-menu hidden">
+                        <a href="#" class="hover:bg-gray-100 hover:text-blue-600">Ship Brokerage & Chartering</a>
+                        <a href="#" class="hover:bg-gray-100 hover:text-blue-600">Marine Logistics and Consultancy</a>
+                        <a href="#" class="hover:bg-gray-100 hover:text-blue-600">Procurement</a>
+                        <a href="#" class="hover:bg-gray-100 hover:text-blue-600">Offshore Support</a>
+                    </div>
+                </div>
+                <a href="index.html#contact" class="nav-item hover:text-blue-600">Contact us</a>
+                <a href="https://example.com/profile" class="gradient-btn">Company Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Overlay -->
+    <div id="overlay" class="fixed inset-0 opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out z-40"></div>
+
+    <!-- Mobile Menu Panel -->
+    <div id="mobileMenu" class="fixed top-0 right-0 h-full w-3/4 max-w-xs bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+        <div class="flex justify-between items-center p-4 border-b">
+            <button id="closeBtn" class="text-2xl focus:outline-none cursor-pointer" aria-label="Close menu">×</button>
+        </div>
+        <nav class="flex flex-col p-4 space-y-4">
+            <a href="index.html#home" class="nav-item hover:text-blue-600">Home</a>
+            <a href="#about" class="nav-item hover:text-blue-600">About us</a>
+            <a href="#" class="nav-item hover:text-blue-600" id="mobileServicesToggle">Services
+                <svg class="toggle-indicator" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+            <div id="mobileServicesMenu" class="flex flex-col space-y-2 pl-4 hidden">
+                <a href="#" class="hover:bg-gray-100 hover:text-blue-600">Ship Brokerage & Chartering</a>
+                <a href="#" class="hover:bg-gray-100 hover:text-blue-600">Marine Logistics and Consultancy</a>
+                <a href="#" class="hover:bg-gray-100 hover:text-blue-600">Offshore Support</a>
+                <a href="#" class="hover:bg-gray-100 hover:text-blue-600">Procurement & Logistics</a>
+            </div>
+            <a href="index.html#contact" class="nav-item hover:text-blue-600">Contact us</a>
+            <a href="https://example.com/profile" class="gradient-btn">Company Profile</a>
+        </nav>
+    </div>
+
+    <!-- About Hero Section -->
+    <section class="hero-bg text-white text-center px-6 py-24">
+        <div class="hero-bg-inner active" style="background-image: url('./Images/about_herobg.jpg');"></div>
+        <div class="w-full max-w-5xl mx-auto px-6 md:px-12 lg:px-20">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight hero-text">
+                Redefining Marine and Offshore Excellence Across Global Waters.
+            </h1>
+            <p class="mt-4 text-sm sm:text-base md:text-lg lg:text-lg text-gray-200 max-w-3xl mx-auto hero-subtext">
+                An indigenous Nigerian company delivering innovative and reliable marine and offshore solutions with a commitment to excellence, integrity, and sustainability.
+            </p>
+            <div class="mt-3 hero-button">
+                <a href="#mission-vision" class="gradient-btn" aria-label="Learn more about our mission and vision">Discover Our Story</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Overview Section -->
+    <section id="company-overview" class="py-16 px-6 bg-gray-50">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+            <div class="fly-in text-left flex flex-col">
+                <div class="relative">
+                    <h2 class="text-3xl font-bold mb-4 text-gray-800">
+                        <span class="l-accent-top"></span>
+                        <span class="l-accent-left"></span>
+                        Who We Are
+                    </h2>
+                </div>
+                <div class="flex-1 flex flex-col justify-between">
+                    <p class="text-gray-600 mb-4">
+                        Eshua Ofe Marine Limited (EOML) is a fully registered indigenous Nigerian marine logistics and offshore services company, committed to innovative, reliable, and secure solutions in the maritime sector. Anchored in excellence, we prioritize quality service delivery, client satisfaction, and industry best practices.
+                        We specialize in Ship Brokerage & Chartering, Marine Logistics and Consultancy, Offshore Support, and Procurement & Logistics—aligning our services with the oil and gas, shipping, and offshore sectors to enable safe and efficient operations while supporting Nigeria’s blue economy.
+                        With operational footprints in Port Harcourt, Cross River, and Lagos, we are positioned to serve clients swiftly across the Gulf of Guinea and inland waterways. Our seasoned professionals, maritime experts, engineers, and logistics specialists bring deep industry knowledge, technical skill, and commitment to excellence.
+                        Leveraging our fleet, partnerships, and compliance, we deliver scalable, sustainable solutions with innovation, professionalism, and integrity. At EOML, we are more than service providers—we are long-term partners in your offshore success.
+                    </p>
+                    <a href="index.html#contact" class="gradient-btn mt-auto" aria-label="Contact us to learn more">Get in Touch</a>
+                </div>
+            </div>
+            <div class="fly-in flex items-center">
+                <img src="./Images/about_side.jpg" alt="Eshua Ofe Marine Limited facility" class="w-full h-full object-cover rounded-lg shadow-lg" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission and Vision Section -->
+    <section id="mission-vision" class="py-16 px-6 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-12 text-gray-800">Our Mission & Vision</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="fly-in">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Our Mission</h3>
+                    <p class="text-gray-600">
+                        To provide innovative, reliable, and sustainable marine solutions that empower our clients to achieve operational excellence while upholding safety and environmental standards.
+                    </p>
+                </div>
+                <div class="fly-in">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Our Vision</h3>
+                    <p class="text-gray-600">
+                        To be the preferred partner for marine and offshore services in Nigeria and beyond, recognized for our integrity, expertise, and commitment to client success.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="py-16 px-6 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Our Journey</h2>
+            <div class="timeline-container">
+                <div class="timeline-item fly-in">
+                    <h3 class="text-xl font-semibold text-gray-800">2002 - Founded</h3>
+                    <p class="text-gray-600">
+                        Eshua Ofe Marine Limited was established in Nigeria, with a vision to transform marine and offshore services.
+                    </p>
+                </div>
+                <div class="timeline-item fly-in">
+                    <h3 class="text-xl font-semibold text-gray-800">2010 - Expanded Services</h3>
+                    <p class="text-gray-600">
+                        Introduced ship brokerage and offshore support, growing our footprint in the maritime industry.
+                    </p>
+                </div>
+                <div class="timeline-item fly-in">
+                    <h3 class="text-xl font-semibold text-gray-800">2015 - Global Reach</h3>
+                    <p class="text-gray-600">
+                        Partnered with international clients, delivering projects across Africa and beyond.
+                    </p>
+                </div>
+                <div class="timeline-item fly-in">
+                    <h3 class="text-xl font-semibold text-gray-800">2020 - Sustainability Focus</h3>
+                    <p class="text-gray-600">
+                        Adopted eco-friendly practices to align with global sustainability goals.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section (Optional) -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Meet Our Team</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="team-card fly-in bg-white rounded-lg shadow-lg p-6 text-center">
+                    <img src="./Images/team_member1.jpg" alt="Team Member 1" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" />
+                    <h3 class="text-lg font-semibold text-gray-800">John Doe</h3>
+                    <p class="text-gray-600">
+                        CEO & Founder
+                    </p>
+                </div>
+                <div class="team-card fly-in bg-white rounded-lg shadow-lg p-6 text-center">
+                    <img src="./Images/team_member2.jpg" alt="Team Member 2" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" />
+                    <h3 class="text-lg font-semibold text-gray-800">Jane Smith</h3>
+                    <p class="text-gray-600">
+                        Operations Manager
+                    </p>
+                </div>
+                <div class="team-card fly-in bg-white rounded-lg shadow-lg p-6 text-center">
+                    <img src="./Images/team_member3.jpg" alt="Team Member 3" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" />
+                    <h3 class="text-lg font-semibold text-gray-800">Michael Brown</h3>
+                    <p class="text-gray-600">
+                        Marine Consultant
+                    </p>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="#contact" class="gradient-btn" aria-label="Join our team">Join Our Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section (Reused from index.html) -->
+    <section class="py-16 px-6 bg-gray-100">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="stats-item fly-in flex flex-col items-center text-center p-4">
+                <p class="font-bold text-red-600">
+                    Global Clients
+                </p>
+                <h2 class="font-extrabold counter text-red-600" data-target="120">0+</h2>
+            </div>
+            <div class="stats-item fly-in flex flex-col items-center text-center p-4">
+                <p class="font-bold text-gray-800">
+                    Projects Executed
+                </p>
+                <h2 class="font-extrabold counter text-gray-800" data-target="350">0+</h2>
+            </div>
+            <div class="stats-item fly-in flex flex-col items-center text-center p-4">
+                <p class="font-bold text-gray-800">
+                    Years of Experience
+                </p>
+                <h2 class="font-extrabold counter text-gray-800" data-target="23">0+</h2>
+            </div>
+            <div class="stats-item fly-in flex flex-col items-center text-center p-4">
+                <p class="font-bold text-gray-800">
+                    Active Workforce
+                </p>
+                <h2 class="font-extrabold counter text-gray-800" data-target="500">0+</h2>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 px-6 bg-gray-900 text-white text-center">
+        <h2 class="text-3xl font-bold mb-6">Ready to Work With Us?</h2>
+        <p class="max-w-2xl mx-auto mb-8 text-gray-200">
+            Partner with Eshua Ofe Marine Limited for innovative and reliable marine solutions tailored to your needs.
+        </p>
+        <a href="index.html#contact" class="gradient-btn" aria-label="Contact us for a quote">Get a Quote</a>
+    </section>
+
+    <!-- Footer (Reused from index.html) -->
+    <footer class="text-center">
+        <div class="container mx-auto px-6">
+            <nav class="flex justify-center space-x-6 mb-4">
+                <a href="index.html#home" class="hover:text-red-600">Home</a>
+                <a href="#about" class="hover:text-red-600">About Us</a>
+                <a href="index.html#services" class="hover:text-red-600">Services</a>
+                <a href="index.html#contact" class="hover:text-red-600">Contact Us</a>
+            </nav>
+        </div>
+        <div style="background: #fff; color: #074672; width: 100vw; margin-left: calc(50% - 50vw); padding: 1.5rem 0;">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                <div class="flex-shrink-0">
+                    <img src="./Images/logo_name.png" alt="Eshua Ofe Marine Limited Logo" class="mx-auto h-12 object-contain" />
+                </div>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="https://www.linkedin.com/company/eshuaofemarine" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in text-2xl"></i>
+                    </a>
+                    <a href="https://twitter.com/eshuaofemarine" target="_blank" aria-label="Twitter">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                    <a href="https://www.facebook.com/eshuaofemarine" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f text-2xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/eshuaofemarine" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="flex flex-col items-center gap-1 mt-6 text-xs md:text-sm" style="line-height:1.3;">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-map-marker-alt text-base text-red-600"></i>
+                    <span><strong>Head Office:</strong> #41, 323 Old Refinery Road, Elelenwo, by Lobak Filling Station, Port Harcourt, Rivers State.</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-map-marker-alt text-base text-red-600"></i>
+                    <span><strong>Head Office:</strong> 11B Old Court Road, Abakpa, Ogoja, Cross Rivers State, Nigeria</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-map-marker-alt text-base text-red-600"></i>
+                    <span><strong>Branch Office:</strong> The Amasu Igboro Street, Ijanikin, Ojo Local Government Area, Lagos State, Nigeria</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-globe text-base text-blue-700"></i>
+                    <a href="https://www.eshuaofemarineltd.com" target="_blank" class="footer-contact-link">www.eshuaofemarineltd.com</a>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-envelope text-base text-blue-700"></i>
+                    <a href="mailto:info@eshuaofemarineltd.com" class="footer-contact-link">info@eshuaofemarineltd.com</a>
+                </div>
+            </div>
+            <p class="mt-4">
+                &copy; 2025 Eshua Ofe Marine Limited. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts (Reused from index.html with modifications) -->
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const closeBtn = document.getElementById('closeBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const overlay = document.getElementById('overlay');
+        const servicesToggle = document.getElementById('servicesToggle');
+        const mobileServicesToggle = document.getElementById('mobileServicesToggle');
+        const servicesMenu = document.querySelector('.dropdown-menu');
+        const mobileServicesMenu = document.getElementById('mobileServicesMenu');
+
+        function openMenu() {
+            mobileMenu.style.display = 'block';
+            overlay.style.display = 'block';
+            requestAnimationFrame(() => {
+                mobileMenu.classList.add('active');
+                mobileMenu.classList.remove('translate-x-full');
+                overlay.classList.add('active');
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+                overlay.classList.add('opacity-100', 'pointer-events-auto');
+                menuBtn.setAttribute('aria-expanded', 'true');
+            });
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.remove('active');
+            mobileMenu.classList.add('translate-x-full');
+            overlay.classList.remove('active');
+            overlay.classList.remove('opacity-100', 'pointer-events-auto');
+            overlay.classList.add('opacity-0', 'pointer-events-none');
+            menuBtn.setAttribute('aria-expanded', 'false');
+            setTimeout(() => {
+                mobileMenu.style.display = 'none';
+                overlay.style.display = 'none';
+            }, 300);
+            servicesMenu.classList.add('hidden');
+            mobileServicesMenu.classList.add('hidden');
+            servicesToggle.querySelector('.toggle-indicator').classList.remove('active');
+            mobileServicesToggle.querySelector('.toggle-indicator').classList.remove('active');
+        }
+
+        servicesToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            servicesMenu.classList.toggle('hidden');
+            servicesToggle.querySelector('.toggle-indicator').classList.toggle('active');
+        });
+
+        mobileServicesToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            mobileServicesMenu.classList.toggle('hidden');
+            mobileServicesToggle.querySelector('.toggle-indicator').classList.toggle('active');
+        });
+
+        menuBtn.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+        mobileMenu.querySelectorAll('a:not(#mobileServicesToggle)').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Counter animation
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                counter.innerText = '0+';
+                const updateCounter = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const current = parseInt(counter.innerText);
+                    const increment = target / 200;
+                    if (current < target) {
+                        counter.innerText = `${Math.ceil(current + increment)}+`;
+                        setTimeout(updateCounter, 15);
+                    } else {
+                        counter.innerText = `${target}+`;
+                    }
+                };
+                updateCounter();
+            });
+
+            // Fly-in animation for sections
+            const elements = document.querySelectorAll('.fly-in');
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry, index) => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                entry.target.classList.add('animate-fly-in');
+                            }, index * 100);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                {
+                    threshold: 0.2
+                }
+            );
+            elements.forEach(element => observer.observe(element));
+
+            // Header background change (optional, if dark sections exist)
+            const header = document.querySelector('header');
+            const darkSections = document.querySelectorAll('.bg-gray-900');
+            const headerObserver = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            header.classList.add('transparent-white');
+                        } else {
+                            header.classList.remove('transparent-white');
+                        }
+                    });
+                },
+                {
+                    threshold: 0.1, rootMargin: '-80px 0px 0px 0px'
+                }
+            );
+            darkSections.forEach(section => headerObserver.observe(section));
+        });
+
+        // Close desktop services dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth >= 768) {
+                const isToggle = servicesToggle.contains(e.target);
+                const isMenu = servicesMenu.contains(e.target);
+                if (!isToggle && !isMenu && !servicesMenu.classList.contains('hidden')) {
+                    servicesMenu.classList.add('hidden');
+                    servicesToggle.querySelector('.toggle-indicator').classList.remove('active');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
