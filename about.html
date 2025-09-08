@@ -54,7 +54,7 @@
     }
     </script>
     <style>
-        /* Original styles with updated CTA section */
+        /* Original styles with updated image fix */
         body {
             margin: 0;
             background-image: url('https://source.unsplash.com/random/1920x1080/?ocean');
@@ -389,6 +389,42 @@
             height: 100%;
             background: rgba(255, 255, 255, 0.3);
             z-index: 1;
+        }
+        /* Fix for visible images (excluding policy cards) to prevent zooming on large screens */
+        #company-overview img,
+        #mission img,
+        #vision img,
+        #journey img,
+        #values-policies .tab-content img,
+        #team img {
+            width: 100%;
+            height: auto;
+            object-fit: contain; /* Show full image without cropping */
+            object-position: center; /* Center the image */
+            max-height: 500px; /* Limit height to prevent over-scaling */
+            max-width: 600px; /* Consistent width */
+        }
+        @media (min-width: 1024px) {
+            #company-overview img,
+            #mission img,
+            #vision img,
+            #journey img,
+            #values-policies .tab-content img,
+            #team img {
+                max-height: 600px; /* Slightly larger for large screens */
+                max-width: 800px; /* Allow more width on large screens */
+            }
+        }
+        @media (max-width: 767px) {
+            #company-overview img,
+            #mission img,
+            #vision img,
+            #journey img,
+            #values-policies .tab-content img,
+            #team img {
+                max-height: 300px; /* Smaller for mobile */
+                max-width: 100%;
+            }
         }
         #stats > * {
             position: relative;
