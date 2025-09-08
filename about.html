@@ -25,7 +25,7 @@
     <!-- Tailwind CSS (Local) -->
     <link rel="stylesheet" href="./tailwind.min.css">
     <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Google Fonts: Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Structured Data (JSON-LD) -->
@@ -96,7 +96,7 @@
         }
         .gradient-btn {
             display: inline-block;
-            padding: 0.5rem 1rem;
+            padding: 0.75rem 1.5rem;
             font-weight: bold;
             color: white;
             background: linear-gradient(to bottom, #F70622, #074672);
@@ -394,66 +394,92 @@
             position: relative;
             z-index: 2;
         }
-        /* Updated CTA section */
+        /* CTA Section (matched to contact.html) */
         #cta {
             position: relative;
-            overflow: hidden;
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-image: linear-gradient(to bottom right, rgba(247, 6, 34, 0.9), rgba(7, 70, 114, 0.9)), url('./Images/cta_bg.jpg');
+            background-image: url('./Images/second_hero.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+            padding: 4rem 1rem;
         }
-        #cta .cta-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            max-width: 1200px;
-            padding: 2rem;
+        #cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8); /* Strong overlay */
+            z-index: 1;
+        }
+        #cta > * {
             position: relative;
             z-index: 2;
-            gap: 1.5rem; /* Space between elements */
         }
-        #cta .cta-content h2 {
-            font-size: 2.25rem; /* text-4xl for mobile */
-            color: #ffffff; /* White for contrast */
-            font-weight: bold;
-            margin-bottom: 0; /* Remove default margin */
+        .contact-form {
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
         }
-        #cta .cta-content p {
-            font-size: 1rem; /* text-base for mobile */
-            color: #e5e7eb; /* Light grey for subtle text */
-            max-width: 600px; /* Constrain text width for readability */
-            margin: 0 auto; /* Center text */
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            background: #ffffff; /* Fully opaque fields */
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
-        #cta .cta-content .cta-image {
-            width: 100%; /* Full width */
-            height: auto;
-            object-fit: cover;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Retain shadow */
+        .contact-form input:focus,
+        .contact-form select:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #074672;
+            box-shadow: 0 0 0 3px rgba(7, 70, 114, 0.2);
         }
-        #cta .cta-content .gradient-btn {
-            white-space: nowrap; /* Ensure button text stays on one line */
-            padding: 0.75rem 2rem; /* Slightly larger padding for balance */
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
         }
-        @media (min-width: 768px) {
-            #cta .cta-content {
-                flex-direction: column; /* Keep column layout on desktop */
-                gap: 2rem;
-            }
-            #cta .cta-content h2 {
-                font-size: 3rem; /* text-5xl for desktop */
-            }
-            #cta .cta-content p {
-                font-size: 1.125rem; /* text-lg for desktop */
-            }
-            #cta .cta-content .cta-image {
-                width: 100%; /* Full width on desktop */
-            }
+        .contact-form label {
+            display: block;
+            font-weight: 500;
+            color: #1f2937; /* Dark labels */
+            margin-bottom: 0.5rem;
+        }
+        .contact-form .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            color: #1f2937;
+        }
+        .contact-form input[type="checkbox"] {
+            width: auto;
+            accent-color: #074672;
+        }
+        .success-message {
+            display: none;
+            text-align: center;
+            color: #074672;
+            font-weight: 500;
+            margin-top: 1rem;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 0.375rem;
+            border: 1px solid #074672;
+            animation: fadeIn 0.5s ease-out;
+        }
+        .success-message i {
+            color: #074672;
+            margin-right: 0.5rem;
+        }
+        .success-message.show {
+            display: block;
         }
         /* Footer mobile padding and icon alignment */
         .footer-contact {
@@ -483,10 +509,10 @@
                 padding-right: 1rem !important;
             }
             .gradient-btn {
-                width: auto;
-                max-width: 200px;
-                display: inline-block;
-                text-align: center;
+                width: 100%;
+                max-width: none;
+                padding: 0.5rem 1rem; /* Smaller button on mobile */
+                font-size: 0.875rem; /* text-sm */
             }
             .timeline-item {
                 padding-left: 2rem;
@@ -497,20 +523,21 @@
             .timeline-item::after {
                 left: 0.25rem;
             }
-        }
-        @media (min-width: 768px) {
-            .section-container {
-                margin-top: 4rem;
-                margin-bottom: 4rem;
+            .contact-form {
+                padding: 1.5rem;
             }
-        }
-        @media (max-width: 767px) {
             .section-container {
                 margin-top: 2rem;
                 margin-bottom: 2rem;
             }
             .section-spacer {
                 height: 4rem;
+            }
+        }
+        @media (min-width: 768px) {
+            .section-container {
+                margin-top: 4rem;
+                margin-bottom: 4rem;
             }
         }
         .tab-button {
@@ -935,14 +962,52 @@
     <!-- Spacer before CTA -->
     <div class="section-spacer cta-spacer"></div>
 
-    <!-- CTA Section -->
-    <section id="cta" class="py-16 px-6 text-center section-container my-8 md:my-16">
-        <div class="cta-content">
-            <h2 class="text-3xl font-bold">Ready to Work With Us?</h2>
-            <p>Partner with Eshua Ofe Marine Limited for innovative and reliable marine solutions tailored to your needs.</p>
-            <img src="./Images/CTA_image.jpg" alt="Call to Action Image" class="cta-image" />
-            <a href="contact.html" class="gradient-btn" aria-label="Contact us for a quote">Get a Quote</a>
-        </div>
+    <!-- CTA Section (Matched to contact.html) -->
+    <section id="cta" class="py-16 px-6 section-container my-8 md:my-16">
+        <h3 class="text-3xl font-bold text-center mb-8 text-white">Get In Touch</h3>
+        <p class="text-center text-gray-200 max-w-2xl mx-auto mb-12">
+            Have a question or need a quote? Fill out the form below, and our team will get back to you promptly.
+        </p>
+        <form id="contactForm" class="contact-form space-y-6" action="#" method="POST">
+            <div>
+                <label for="name" class="text-sm">Your Name <span class="text-red-600">*</span></label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" class="w-full" required aria-label="Your Name" />
+            </div>
+            <div>
+                <label for="email" class="text-sm">Your Email <span class="text-red-600">*</span></label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" class="w-full" required aria-label="Your Email" />
+            </div>
+            <div>
+                <label for="phone" class="text-sm">Your Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" class="w-full" aria-label="Your Phone Number" />
+            </div>
+            <div>
+                <label for="interest" class="text-sm">Area of Interest</label>
+                <select id="interest" name="interest" class="w-full" aria-label="Select Area of Interest">
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="brokerage">Ship Brokerage & Chartering</option>
+                    <option value="logistics">Marine Logistics and Consultancy</option>
+                    <option value="procurement">Procurement</option>
+                    <option value="offshore">Offshore Support</option>
+                </select>
+            </div>
+            <div>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="quote" name="quote" aria-label="Request a Quote" />
+                    Request a Quote
+                </label>
+            </div>
+            <div>
+                <label for="message" class="text-sm">Your Message <span class="text-red-600">*</span></label>
+                <textarea id="message" name="message" placeholder="Enter your message" class="w-full" required aria-label="Your Message"></textarea>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="gradient-btn">Send Message</button>
+            </div>
+            <div id="successMessage" class="success-message">
+                <i class="fas fa-check-circle"></i> Response has been sent
+            </div>
+        </form>
     </section>
 
     <!-- Footer -->
@@ -1153,6 +1218,29 @@
                 zoomedImage.classList.remove('active');
                 zoomedOverlay.classList.remove('active');
             });
+
+            // Form submission handling
+            const contactForm = document.getElementById('contactForm');
+            const successMessage = document.getElementById('successMessage');
+
+            if (contactForm && successMessage) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const name = document.getElementById('name').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const message = document.getElementById('message').value.trim();
+
+                    if (name && email && message) {
+                        successMessage.classList.add('show');
+                        contactForm.reset();
+                        setTimeout(() => {
+                            successMessage.classList.remove('show');
+                        }, 3000);
+                    } else {
+                        alert('Please fill out all required fields.');
+                    }
+                });
+            }
         });
 
         // Close desktop services dropdown when clicking outside

@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="./tailwind.min.css">
     <!-- Font Awesome CDN for services and social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
@@ -53,6 +55,7 @@
     <style>
         body {
             margin: 0;
+            font-family: 'Poppins', sans-serif; /* Added for consistency */
         }
         /* Header styles */
         header {
@@ -130,6 +133,10 @@
                 max-width: 200px;
                 display: inline-block;
                 text-align: center;
+            }
+            .gradient-btn {
+                padding: 0.5rem 1rem; /* Smaller button on mobile */
+                font-size: 0.875rem; /* text-sm */
             }
         }
         /* Dropdown styles */
@@ -529,6 +536,98 @@
             position: relative;
             z-index: 1;
         }
+        /* Contact Section */
+        #contact {
+            position: relative;
+            background-image: url('./Images/second_hero.jpg'); /* Added to match contact.html */
+            background-size: cover;
+            background-position: center;
+            padding: 4rem 1rem;
+        }
+        #contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8); /* Strong overlay */
+            z-index: 1;
+        }
+        #contact > * {
+            position: relative;
+            z-index: 2;
+        }
+        .contact-form {
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            background: #ffffff; /* Fully opaque fields */
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .contact-form input:focus,
+        .contact-form select:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #074672;
+            box-shadow: 0 0 0 3px rgba(7, 70, 114, 0.2);
+        }
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .contact-form label {
+            display: block;
+            font-weight: 500;
+            color: #1f2937; /* Dark labels */
+            margin-bottom: 0.5rem;
+        }
+        .contact-form .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            color: #1f2937;
+        }
+        .contact-form input[type="checkbox"] {
+            width: auto;
+            accent-color: #074672;
+        }
+        .success-message {
+            display: none;
+            text-align: center;
+            color: #074672;
+            font-weight: 500;
+            margin-top: 1rem;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 0.375rem;
+            border: 1px solid #074672;
+            animation: fadeIn 0.5s ease-out;
+        }
+        .success-message i {
+            color: #074672;
+            margin-right: 0.5rem;
+        }
+        .success-message.show {
+            display: block;
+        }
+        @media (max-width: 767px) {
+            .contact-form {
+                padding: 1.5rem;
+            }
+        }
         /* Social Media Section */
         .social-section {
             background-color: #074672;
@@ -749,7 +848,7 @@
                 </div>
             </div>
         </div>
-        <!-- Procurement and Logistics -->
+        <!-- Procurement -->
         <div class="relative h-96 rounded-3xl overflow-hidden shadow-lg group fly-in">
             <div class="absolute inset-0 bg-cover bg-center transform transition-transform duration-300"
                  style="background-image: url('./Images/Procurement.jpg')"
@@ -838,13 +937,48 @@
 
 <!-- Contact Section -->
 <section id="contact" class="py-16 container mx-auto px-6">
-    <h3 class="text-3xl font-bold text-center mb-12">Contact Us</h3>
-    <form class="max-w-lg mx-auto space-y-4">
-        <input type="text" placeholder="Your Name" class="w-full p-3 border rounded-lg" aria-label="Your Name" />
-        <input type="email" placeholder="Your Email" class="w-full p-3 border rounded-lg" aria-label="Your Email" />
-        <textarea placeholder="Your Message" class="w-full p-3 border rounded-lg" aria-label="Your Message"></textarea>
-        <div class="w-full text-center">
-            <button class="gradient-btn" style="width: 70%;">Send</button>
+    <h3 class="text-3xl font-bold text-center mb-8 text-white">Get In Touch</h3>
+    <p class="text-center text-gray-200 max-w-2xl mx-auto mb-12">
+        Have a question or need a quote? Fill out the form below, and our team will get back to you promptly.
+    </p>
+    <form id="contactForm" class="contact-form space-y-6" action="#" method="POST">
+        <div>
+            <label for="name" class="text-sm">Your Name <span class="text-red-600">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" class="w-full" required aria-label="Your Name" />
+        </div>
+        <div>
+            <label for="email" class="text-sm">Your Email <span class="text-red-600">*</span></label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" class="w-full" required aria-label="Your Email" />
+        </div>
+        <div>
+            <label for="phone" class="text-sm">Your Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" class="w-full" aria-label="Your Phone Number" />
+        </div>
+        <div>
+            <label for="interest" class="text-sm">Area of Interest</label>
+            <select id="interest" name="interest" class="w-full" aria-label="Select Area of Interest">
+                <option value="" disabled selected>Select an option</option>
+                <option value="brokerage">Ship Brokerage & Chartering</option>
+                <option value="logistics">Marine Logistics and Consultancy</option>
+                <option value="procurement">Procurement</option>
+                <option value="offshore">Offshore Support</option>
+            </select>
+        </div>
+        <div>
+            <label class="checkbox-label">
+                <input type="checkbox" id="quote" name="quote" aria-label="Request a Quote" />
+                Request a Quote
+            </label>
+        </div>
+        <div>
+            <label for="message" class="text-sm">Your Message <span class="text-red-600">*</span></label>
+            <textarea id="message" name="message" placeholder="Enter your message" class="w-full" required aria-label="Your Message"></textarea>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="gradient-btn">Send Message</button>
+        </div>
+        <div id="successMessage" class="success-message">
+            <i class="fas fa-check-circle"></i> Response has been sent
         </div>
     </form>
 </section>
@@ -1077,6 +1211,29 @@
         darkSections.forEach(section => {
             headerObserver.observe(section);
         });
+
+        // Form submission handling
+        const contactForm = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+
+        if (contactForm && successMessage) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const message = document.getElementById('message').value.trim();
+
+                if (name && email && message) {
+                    successMessage.classList.add('show');
+                    contactForm.reset();
+                    setTimeout(() => {
+                        successMessage.classList.remove('show');
+                    }, 3000);
+                } else {
+                    alert('Please fill out all required fields.');
+                }
+            });
+        }
     });
 
     // Close desktop services dropdown when clicking outside
