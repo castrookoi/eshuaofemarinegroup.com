@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="Images/logo.png" />
+    <link rel="icon" type="image/png" href="./Images/logo.png" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Learn about Eshua Ofe Marine Limited, an indigenous Nigerian company delivering innovative marine and offshore solutions with excellence and integrity." />
@@ -13,21 +13,20 @@
     <meta property="og:description" content="Discover the story, mission, and expertise of Eshua Ofe Marine Limited, a leader in marine and offshore services in Nigeria." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.eshuaofemarine.com/about.html" />
-    <meta property="og:image" content="https://www.eshuaofemarine.com/images/og-about-image.jpg" />
+    <meta property="og:image" content="https://www.eshuaofemarine.com/Images/og-about-image.jpg" />
     <meta property="og:site_name" content="Eshua Ofe Marine Limited" />
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="About Eshua Ofe Marine Limited - Marine and Offshore Solutions" />
     <meta name="twitter:description" content="Discover the story, mission, and expertise of Eshua Ofe Marine Limited, a leader in marine and offshore services in Nigeria." />
-    <meta name="twitter:image" content="https://www.eshuaofemarine.com/images/og-about-image.jpg" />
+    <meta name="twitter:image" content="https://www.eshuaofemarine.com/Images/og-about-image.jpg" />
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.eshuaofemarine.com/about.html" />
     <title>About Us - Eshua Ofe Marine Limited</title>
-    <link rel="icon" type="image/png" href="./Images/logo_name.png">
     <!-- Tailwind CSS (Local) -->
     <link rel="stylesheet" href="./tailwind.min.css">
     <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
     <!-- Google Fonts: Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Structured Data (JSON-LD) -->
@@ -38,7 +37,7 @@
         "name": "Eshua Ofe Marine Limited",
         "description": "Eshua Ofe Marine Limited is an indigenous Nigerian company providing innovative marine solutions, including ship brokerage, marine logistics, procurement, and offshore support services.",
         "url": "https://www.eshuaofemarine.com/about.html",
-        "logo": "https://www.eshuaofemarine.com/images/logo_name.png",
+        "logo": "https://www.eshuaofemarine.com/Images/logo_name.png",
         "foundingDate": "2002",
         "contactPoint": {
             "@type": "ContactPoint",
@@ -56,7 +55,7 @@
     }
     </script>
     <style>
-        /* Original styles with updated image fix and icon hover */
+        /* Updated styles with footer adjustment and icon color */
         body {
             margin: 0;
             background-image: url('https://source.unsplash.com/random/1920x1080/?ocean');
@@ -402,10 +401,10 @@
         #team img {
             width: 100%;
             height: auto;
-            object-fit: contain; /* Show full image without cropping */
-            object-position: center; /* Center the image */
-            max-height: 600px; /* Limit height to prevent over-scaling */
-            max-width: 600px; /* Consistent width */
+            object-fit: contain;
+            object-position: center;
+            max-height: 600px;
+            max-width: 600px;
         }
         @media (min-width: 1024px) {
             #company-overview img,
@@ -413,8 +412,8 @@
             #vision img,
             #journey img,
             #team img {
-                max-height: 600px; /* Slightly larger for large screens */
-                max-width: 800px; /* Allow more width on large screens */
+                max-height: 600px;
+                max-width: 800px;
             }
             #values-policies .tab-content img {
                 max-height: 900px;
@@ -428,7 +427,7 @@
             #journey img,
             #values-policies .tab-content img,
             #team img {
-                max-height: 300px; /* Smaller for mobile */
+                max-height: 300px;
                 max-width: 100%;
             }
         }
@@ -451,7 +450,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8); /* Strong overlay */
+            background: rgba(0, 0, 0, 0.8);
             z-index: 1;
         }
         #cta > * {
@@ -459,7 +458,7 @@
             z-index: 2;
         }
         .contact-form {
-            background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 0.5rem;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             padding: 2rem;
@@ -473,7 +472,7 @@
             padding: 0.75rem;
             border: 1px solid #d1d5db;
             border-radius: 0.375rem;
-            background: #ffffff; /* Fully opaque fields */
+            background: #ffffff;
             transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
         .contact-form input:focus,
@@ -490,7 +489,7 @@
         .contact-form label {
             display: block;
             font-weight: 500;
-            color: #1f2937; /* Dark labels */
+            color: #1f2937;
             margin-bottom: 0.5rem;
         }
         .contact-form .checkbox-label {
@@ -523,21 +522,15 @@
         .success-message.show {
             display: block;
         }
-        /* Footer mobile padding and icon alignment */
-        .footer-contact {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .footer-contact .flex {
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .footer-contact i {
-            font-size: 0.875rem; /* text-sm for alignment */
-        }
+        /* Footer mobile navigation adjustment */
         @media (max-width: 767px) {
+            footer nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            footer nav a {
+                text-align: center;
+            }
             .footer-contact {
                 padding-left: 1.5rem;
                 padding-right: 1.5rem;
@@ -553,8 +546,8 @@
             .gradient-btn {
                 width: 100%;
                 max-width: none;
-                padding: 0.5rem 1rem; /* Smaller button on mobile */
-                font-size: 0.875rem; /* text-sm */
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
             }
             .timeline-item {
                 padding-left: 2rem;
@@ -697,6 +690,25 @@
             transform: scale(1.2);
             color: #F70622;
         }
+        /* Specific Icon Styles */
+        .values-icon {
+            color: #F70622; /* Red icon for Our Core Values & Policies */
+        }
+        .footer-contact i {
+            color: #F70622; /* Red icons for footer contact section */
+        }
+        .nav-item i {
+            color: #1f2937; /* Dark gray for nav icons to match text */
+        }
+        .gradient-btn i {
+            color: #FFFFFF; /* White icons in buttons */
+        }
+        .contact-form i {
+            color: #074672; /* Blue icons in contact form */
+        }
+        .policy-overlay i {
+            color: #FFFFFF; /* White icons in policy overlay */
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
@@ -715,10 +727,10 @@
                         </svg>
                     </a>
                     <div class="dropdown-menu hidden">
-                        <a href="services.html#brokerage" class="hover:bg-gray-100 hover:text-blue-600">Ship Brokerage & Chartering</a>
-                        <a href="services.html#logistics" class="hover:bg-gray-100 hover:text-blue-600">Marine Logistics and Consultancy</a>
-                        <a href="services.html#procurement" class="hover:bg-gray-100 hover:text-blue-600">Procurement</a>
-                        <a href="services.html#offshore" class="hover:bg-gray-100 hover:text-blue-600">Offshore Support</a>
+                        <a href="Brokerage.html" class="hover:bg-gray-100 hover:text-blue-600">Ship Brokerage & Chartering</a>
+                        <a href="logistics.html" class="hover:bg-gray-100 hover:text-blue-600">Marine Logistics and Consultancy</a>
+                        <a href="Procurement.html" class="hover:bg-gray-100 hover:text-blue-600">Procurement</a>
+                        <a href="offshore.html" class="hover:bg-gray-100 hover:text-blue-600">Offshore Support</a>
                     </div>
                 </div>
                 <a href="contact.html" class="nav-item hover:text-blue-600"><i class="fas fa-envelope icon-hover mr-1"></i> Contact Us</a>
@@ -744,10 +756,10 @@
                 </svg>
             </a>
             <div id="mobileServicesMenu" class="flex flex-col space-y-2 pl-4 hidden">
-                <a href="services.html#brokerage" class="hover:bg-gray-100 hover:text-blue-600">Ship Brokerage & Chartering</a>
-                <a href="services.html#logistics" class="hover:bg-gray-100 hover:text-blue-600">Marine Logistics and Consultancy</a>
-                <a href="services.html#offshore" class="hover:bg-gray-100 hover:text-blue-600">Offshore Support</a>
-                <a href="services.html#procurement" class="hover:bg-gray-100 hover:text-blue-600">Procurement & Logistics</a>
+                <a href="Brokerage.html" class="hover:bg-gray-100 hover:text-blue-600">Ship Brokerage & Chartering</a>
+                <a href="logistics.html" class="hover:bg-gray-100 hover:text-blue-600">Marine Logistics and Consultancy</a>
+                <a href="Procurement.html" class="hover:bg-gray-100 hover:text-blue-600">Procurement</a>
+                <a href="offshore.html" class="hover:bg-gray-100 hover:text-blue-600">Offshore Support</a>
             </div>
             <a href="contact.html" class="nav-item hover:text-blue-600"><i class="fas fa-envelope icon-hover mr-1"></i> Contact Us</a>
             <a href="https://example.com/profile" class="gradient-btn"><i class="fas fa-file-alt icon-hover mr-1"></i> Company Profile</a>
@@ -781,7 +793,7 @@
                     <h2 class="text-3xl font-bold mb-4 text-gray-800 text-left">
                         <span class="l-accent-top"></span>
                         <span class="l-accent-left"></span>
-                        <i class="fas fa-info-circle text-red-600 icon-hover mr-2"></i> Who We Are
+                        <i class="fas fa-info-circle values-icon icon-hover mr-2"></i> Who We Are
                     </h2>
                 </div>
                 <div class="flex-1 flex flex-col justify-between">
@@ -814,7 +826,7 @@
                     <h2 class="text-3xl font-bold mb-4 text-gray-800 text-left">
                         <span class="l-accent-top"></span>
                         <span class="l-accent-left"></span>
-                        <i class="fas fa-bullseye text-red-600 icon-hover mr-2"></i> Our Mission
+                        <i class="fas fa-bullseye values-icon icon-hover mr-2"></i> Our Mission
                     </h2>
                 </div>
                 <p class="text-gray-600">
@@ -835,7 +847,7 @@
                     <h2 class="text-3xl font-bold mb-4 text-gray-800 text-left">
                         <span class="l-accent-top"></span>
                         <span class="l-accent-left"></span>
-                        <i class="fas fa-eye text-red-600 icon-hover mr-2"></i> Our Vision
+                        <i class="fas fa-eye values-icon icon-hover mr-2"></i> Our Vision
                     </h2>
                 </div>
                 <p class="text-gray-600">
@@ -862,7 +874,7 @@
                     <h2 class="text-3xl font-bold mb-4 text-gray-800 text-left">
                         <span class="l-accent-top"></span>
                         <span class="l-accent-left"></span>
-                        <i class="fas fa-road text-red-600 icon-hover mr-2"></i> Our Journey
+                        <i class="fas fa-road values-icon icon-hover mr-2"></i> Our Journey
                     </h2>
                 </div>
                 <div class="timeline-container">
@@ -905,7 +917,7 @@
                 <h2 class="text-3xl font-bold mb-6 text-gray-800 text-left">
                     <span class="l-accent-top"></span>
                     <span class="l-accent-left"></span>
-                    <i class="fas fa-hand-holding-heart text-red-600 icon-hover mr-2"></i> Our Core Values & Policies
+                    <i class="fas fa-hand-holding-heart values-icon icon-hover mr-2"></i> Our Core Values & Policies
                 </h2>
             </div>
             <div class="fly-in">
@@ -969,7 +981,7 @@
                 <h2 class="text-3xl font-bold mb-4 text-gray-800 relative inline-block" style="margin-top:0;">
                     <span class="l-accent-top absolute"></span>
                     <span class="l-accent-left absolute"></span>
-                    <i class="fas fa-users text-red-600 icon-hover mr-2"></i> Technical and Management Team
+                    <i class="fas fa-users values-icon icon-hover mr-2"></i> Technical and Management Team
                 </h2>
                 <p class="text-gray-600 mb-8 text-center max-w-3xl mx-auto">
                     At Eshua Ofe Marine Limited, our success is driven by a dedicated team of skilled and experienced professionals with deep expertise in Ship Brokerage & Chartering, Marine Logistics and Consultancy, Offshore Support, and Procurement & Logistics. Their comprehensive knowledge of the maritime and offshore sector empowers us to provide reliable, efficient, and innovative solutions tailored to the unique needs of each client.
@@ -991,7 +1003,7 @@
     <section id="stats" class="py-16 px-6 bg-gray-100 section-container my-8 md:my-16">
         <div class="relative">
             <h2 class="text-3xl font-bold mb-6 text-gray-800 text-center">
-                <i class="fas fa-chart-bar text-red-600 icon-hover mr-2"></i> Our Achievements
+                <i class="fas fa-chart-bar values-icon icon-hover mr-2"></i> Our Achievements
             </h2>
         </div>
         <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
@@ -1017,27 +1029,27 @@
     <!-- Spacer before CTA -->
     <div class="section-spacer cta-spacer"></div>
 
-    <!-- CTA Section (Matched to contact.html) -->
+    <!-- CTA Section -->
     <section id="cta" class="py-16 px-6 section-container my-8 md:my-16">
-        <h3 class="text-3xl font-bold text-center mb-8 text-white"><i class="fas fa-envelope text-red-600 icon-hover mr-2"></i> Get In Touch</h3>
+        <h3 class="text-3xl font-bold text-center mb-8 text-white"><i class="fas fa-envelope values-icon icon-hover mr-2"></i> Get In Touch</h3>
         <p class="text-center text-gray-200 max-w-2xl mx-auto mb-12">
             Have a question or need a quote? Fill out the form below, and our team will get back to you promptly.
         </p>
         <form id="contactForm" class="contact-form space-y-6" action="#" method="POST">
             <div>
-                <label for="name" class="text-sm"><i class="fas fa-user text-blue-700 icon-hover mr-1"></i> Your Name <span class="text-red-600">*</span></label>
+                <label for="name" class="text-sm"><i class="fas fa-user contact-form-icon icon-hover mr-1"></i> Your Name <span class="text-red-600">*</span></label>
                 <input type="text" id="name" name="name" placeholder="Enter your name" class="w-full" required aria-label="Your Name" />
             </div>
             <div>
-                <label for="email" class="text-sm"><i class="fas fa-envelope text-blue-700 icon-hover mr-1"></i> Your Email <span class="text-red-600">*</span></label>
+                <label for="email" class="text-sm"><i class="fas fa-envelope contact-form-icon icon-hover mr-1"></i> Your Email <span class="text-red-600">*</span></label>
                 <input type="email" id="email" name="email" placeholder="Enter your email" class="w-full" required aria-label="Your Email" />
             </div>
             <div>
-                <label for="phone" class="text-sm"><i class="fas fa-phone text-blue-700 icon-hover mr-1"></i> Your Phone Number</label>
+                <label for="phone" class="text-sm"><i class="fas fa-phone contact-form-icon icon-hover mr-1"></i> Your Phone Number</label>
                 <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" class="w-full" aria-label="Your Phone Number" />
             </div>
             <div>
-                <label for="interest" class="text-sm"><i class="fas fa-list text-blue-700 icon-hover mr-1"></i> Area of Interest</label>
+                <label for="interest" class="text-sm"><i class="fas fa-list contact-form-icon icon-hover mr-1"></i> Area of Interest</label>
                 <select id="interest" name="interest" class="w-full" aria-label="Select Area of Interest">
                     <option value="" disabled selected>Select an option</option>
                     <option value="brokerage">Ship Brokerage & Chartering</option>
@@ -1049,11 +1061,11 @@
             <div>
                 <label class="checkbox-label">
                     <input type="checkbox" id="quote" name="quote" aria-label="Request a Quote" />
-                    <i class="fas fa-file-invoice-dollar text-blue-700 icon-hover mr-1"></i> Request a Quote
+                    <i class="fas fa-file-invoice-dollar contact-form-icon icon-hover mr-1"></i> Request a Quote
                 </label>
             </div>
             <div>
-                <label for="message" class="text-sm"><i class="fas fa-comment text-blue-700 icon-hover mr-1"></i> Your Message <span class="text-red-600">*</span></label>
+                <label for="message" class="text-sm"><i class="fas fa-comment contact-form-icon icon-hover mr-1"></i> Your Message <span class="text-red-600">*</span></label>
                 <textarea id="message" name="message" placeholder="Enter your message" class="w-full" required aria-label="Your Message"></textarea>
             </div>
             <div class="text-center">
@@ -1097,23 +1109,23 @@
             </div>
             <div class="footer-contact flex flex-col items-center gap-1 mt-6 text-xs md:text-sm" style="line-height:1.3;">
                 <div class="flex items-center gap-2">
-                    <i class="fas fa-map-marker-alt text-sm text-red-600 icon-hover"></i>
+                    <i class="fas fa-map-marker-alt text-sm icon-hover"></i>
                     <span><strong>Head Office:</strong> #41, 323 Old Refinery Road, Elelenwo, by Lobak Filling Station, Port Harcourt, Rivers State.</span>
                 </div>
                 <div class="flex items-center gap-2">
-                    <i class="fas fa-map-marker-alt text-sm text-red-600 icon-hover"></i>
+                    <i class="fas fa-map-marker-alt text-sm icon-hover"></i>
                     <span><strong>Head Office:</strong> 11B Old Court Road, Abakpa, Ogoja, Cross Rivers State, Nigeria</span>
                 </div>
                 <div class="flex items-center gap-2">
-                    <i class="fas fa-map-marker-alt text-sm text-red-600 icon-hover"></i>
+                    <i class="fas fa-map-marker-alt text-sm icon-hover"></i>
                     <span><strong>Branch Office:</strong> The Amasu Igboro Street, Ijanikin, Ojo Local Government Area, Lagos State, Nigeria</span>
                 </div>
                 <div class="flex items-center gap-2">
-                    <i class="fas fa-globe text-sm text-blue-700 icon-hover"></i>
+                    <i class="fas fa-globe text-sm icon-hover"></i>
                     <a href="https://www.eshuaofemarineltd.com" target="_blank" class="footer-contact-link">www.eshuaofemarineltd.com</a>
                 </div>
                 <div class="flex items-center gap-2">
-                    <i class="fas fa-envelope text-sm text-blue-700 icon-hover"></i>
+                    <i class="fas fa-envelope text-sm icon-hover"></i>
                     <a href="mailto:info@eshuaofemarineltd.com" class="footer-contact-link">info@eshuaofemarineltd.com</a>
                 </div>
             </div>

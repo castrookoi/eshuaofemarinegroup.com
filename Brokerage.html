@@ -1,35 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="Images/logo.png" />
+    <link rel="icon" type="image/png" href="./Images/logo.png" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Eshua Ofe Marine Limited offers expert ship brokerage and chartering services, facilitating vessel acquisition and management for maritime operations." />
     <meta name="keywords" content="Eshua Ofe Marine Limited, ship brokerage, vessel chartering, marine services, Nigeria" />
     <meta name="author" content="Eshua Ofe Marine Limited" />
     <meta name="robots" content="index, follow" />
-    <!-- Open Graph Tags -->
     <meta property="og:title" content="Ship Brokerage & Chartering - Eshua Ofe Marine Limited" />
     <meta property="og:description" content="Discover our expert ship brokerage and chartering services for seamless vessel acquisition and management." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.eshuaofemarine.com/brokerage.html" />
-    <meta property="og:image" content="https://www.eshuaofemarine.com/images/og-brokerage-image.jpg" />
+    <meta property="og:url" content="https://www.eshuaofemarine.com/Brokerage.html" />
+    <meta property="og:image" content="https://www.eshuaofemarine.com/Images/og-brokerage-image.jpg" />
     <meta property="og:site_name" content="Eshua Ofe Marine Limited" />
-    <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Ship Brokerage & Chartering - Eshua Ofe Marine Limited" />
     <meta name="twitter:description" content="Discover our expert ship brokerage and chartering services for seamless vessel acquisition and management." />
-    <meta name="twitter:image" content="https://www.eshuaofemarine.com/images/og-brokerage-image.jpg" />
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.eshuaofemarine.com/brokerage.html" />
+    <meta name="twitter:image" content="https://www.eshuaofemarine.com/Images/og-brokerage-image.jpg" />
+    <link rel="canonical" href="https://www.eshuaofemarine.com/Brokerage.html" />
     <title>Ship Brokerage & Chartering - Eshua Ofe Marine Limited</title>
-    <!-- Tailwind CSS (Local) -->
     <link rel="stylesheet" href="./tailwind.min.css" />
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-    <!-- Google Fonts: Poppins -->
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -39,7 +32,7 @@
             "@type": "Organization",
             "name": "Eshua Ofe Marine Limited",
             "url": "https://www.eshuaofemarine.com",
-            "logo": "https://www.eshuaofemarine.com/images/logo_name.png"
+            "logo": "https://www.eshuaofemarine.com/Images/logo_name.png"
         },
         "description": "Eshua Ofe Marine Limited provides expert ship brokerage and chartering services, facilitating vessel acquisition, chartering, and management for maritime operations.",
         "areaServed": "Global"
@@ -48,10 +41,6 @@
     <style>
         body {
             margin: 0;
-            background-image: url('https://source.unsplash.com/random/1920x1080/?ocean');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
             font-family: 'Poppins', sans-serif;
         }
         header {
@@ -102,6 +91,7 @@
         }
         .gradient-btn i {
             margin-right: 0.5rem;
+            color: #FFFFFF;
         }
         .dropdown-menu {
             position: absolute;
@@ -145,6 +135,9 @@
         .nav-item:hover {
             background-color: rgba(7, 70, 114, 0.1);
         }
+        .nav-item i {
+            color: #1f2937;
+        }
         .hero-bg {
             position: relative;
             overflow: hidden;
@@ -182,14 +175,7 @@
             height: 100%;
             background-size: cover;
             background-position: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 1s ease-in-out;
             z-index: 1;
-        }
-        .hero-bg-inner.active {
-            opacity: 1;
-            visibility: visible;
         }
         .hero-text {
             opacity: 0;
@@ -241,10 +227,10 @@
             z-index: 1;
         }
         .brokerage-spacer {
-            background-image: url('./Images/brokerage_bg.jpg');
+            background-image: url('./Images/CTA_bg.jpg');
         }
         .projects-spacer {
-            background-image: url('./Images/projects_bg.jpg');
+            background-image: url('./Images/about_herobg.jpg');
         }
         .cta-spacer {
             background-image: url('./Images/about_herobg.jpg');
@@ -278,16 +264,26 @@
                 max-width: 100%;
             }
         }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
         .project-card {
             position: relative;
             overflow: hidden;
             border-radius: 0.5rem;
             transition: transform 0.3s ease;
+            cursor: pointer;
         }
         .project-card img {
             width: 100%;
             height: 250px;
             object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover img {
+            transform: scale(1.1);
         }
         .project-overlay {
             position: absolute;
@@ -301,11 +297,104 @@
             justify-content: center;
             align-items: center;
             color: white;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .project-card:hover .project-overlay {
             opacity: 1;
+            white-space: normal;
+            padding: 1rem;
+            text-align: center;
+        }
+        .project-overlay i {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #FFFFFF;
+        }
+        .project-overlay h3 {
+            font-size: 1.125rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .project-overlay p {
+            font-size: 0.9rem;
+        }
+        .zoomed-image {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            max-width: 90%;
+            max-height: 90vh;
+            z-index: 100;
+            transition: transform 0.3s ease;
+        }
+        .zoomed-image.active {
+            display: block;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .zoomed-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 99;
+        }
+        .zoomed-overlay.active {
+            display: block;
+        }
+        @media (min-width: 768px) {
+            .section-container {
+                margin-top: 4rem;
+                margin-bottom: 4rem;
+                padding: 2rem;
+            }
+        }
+        @media (max-width: 767px) {
+            .project-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .project-card img {
+                height: 200px;
+            }
+            .section-container {
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+                padding: 1.5rem;
+            }
+            .section-spacer {
+                height: 4rem;
+            }
+            .gradient-btn {
+                width: 100%;
+                max-width: none;
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+            }
+            .contact-form {
+                padding: 1.5rem;
+            }
+            .footer-contact {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+            footer .container {
+                padding-left: 1.5rem !important;
+                padding-right: 1.5rem !important;
+            }
+            footer .flex.space-x-4 {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            footer nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            footer nav a {
+                text-align: center;
+            }
         }
         #cta {
             position: relative;
@@ -376,6 +465,9 @@
             width: auto;
             accent-color: #074672;
         }
+        .contact-form i {
+            color: #074672;
+        }
         .success-message {
             display: none;
             text-align: center;
@@ -444,6 +536,7 @@
         }
         .footer-contact i {
             font-size: 0.875rem;
+            color: #F70622;
         }
         .icon-hover {
             transition: transform 0.2s ease, color 0.2s ease;
@@ -452,56 +545,11 @@
             transform: scale(1.2);
             color: #F70622;
         }
-        @media (min-width: 768px) {
-            .project-grid {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
-            }
-            .section-container {
-                margin-top: 4rem;
-                margin-bottom: 4rem;
-                padding: 2rem;
-            }
+        .values-icon {
+            color: #F70622;
         }
-        @media (max-width: 767px) {
-            .project-grid {
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-            }
-            .project-card img {
-                height: 200px;
-            }
-            .section-container {
-                margin-top: 2rem;
-                margin-bottom: 2rem;
-                padding: 1.5rem;
-            }
-            .section-spacer {
-                height: 4rem;
-            }
-            .gradient-btn {
-                width: 100%;
-                max-width: none;
-                padding: 0.5rem 1rem;
-                font-size: 0.875rem;
-            }
-            .contact-form {
-                padding: 1.5rem;
-            }
-            .footer-contact {
-                padding-left: 1.5rem;
-                padding-right: 1.5rem;
-            }
-            footer .container {
-                padding-left: 1.5rem !important;
-                padding-right: 1.5rem !important;
-            }
-            footer .flex.space-x-4 {
-                padding-left: 1rem !important;
-                padding-right: 1rem !important;
-            }
+        .brokerage-list i {
+            color: #074672;
         }
     </style>
 </head>
@@ -512,23 +560,23 @@
             <img src="./Images/logo_name.png" alt="Eshua Ofe Marine Limited Logo" class="ml-0 object-contain h-14 max-w-[225px] sm:h-20 sm:max-w-[450px] md:h-35 md:max-w-[540px] lg:h-25 lg:max-w-[600px]" />
             <button id="menuBtn" class="md:hidden text-3xl focus:outline-none cursor-pointer" aria-label="Open menu" aria-expanded="false">☰</button>
             <nav class="hidden md:flex space-x-6 items-center ml-auto mr-0">
-                <a href="index.html" class="nav-item hover:text-blue-600">Home</a>
-                <a href="about.html" class="nav-item hover:text-blue-600">About Us</a>
+                <a href="index.html" class="nav-item hover:text-blue-600"><i class="fas fa-home icon-hover mr-1"></i> Home</a>
+                <a href="about.html" class="nav-item hover:text-blue-600"><i class="fas fa-info-circle icon-hover mr-1"></i> About Us</a>
                 <div class="relative">
-                    <a href="services.html" class="nav-item hover:text-blue-600" id="servicesToggle">Services
+                    <a href="services.html" class="nav-item hover:text-blue-600" id="servicesToggle"><i class="fas fa-cogs icon-hover mr-1"></i> Services
                         <svg class="toggle-indicator" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
                     </a>
                     <div class="dropdown-menu hidden">
-                        <a href="brokerage.html" class="hover:bg-gray-100 hover:text-blue-600">Ship Brokerage & Chartering</a>
+                        <a href="Brokerage.html" class="hover:bg-gray-100 hover:text-blue-600">Ship Brokerage & Chartering</a>
                         <a href="logistics.html" class="hover:bg-gray-100 hover:text-blue-600">Marine Logistics and Consultancy</a>
-                        <a href="procurement.html" class="hover:bg-gray-100 hover:text-blue-600">Procurement</a>
+                        <a href="Procurement.html" class="hover:bg-gray-100 hover:text-blue-600">Procurement</a>
                         <a href="offshore.html" class="hover:bg-gray-100 hover:text-blue-600">Offshore Support</a>
                     </div>
                 </div>
-                <a href="contact.html" class="nav-item hover:text-blue-600">Contact Us</a>
-                <a href="https://example.com/profile" class="gradient-btn"><i class="fas fa-file-alt"></i> Company Profile</a>
+                <a href="contact.html" class="nav-item hover:text-blue-600"><i class="fas fa-envelope icon-hover mr-1"></i> Contact Us</a>
+                <a href="https://example.com/profile" class="gradient-btn"><i class="fas fa-file-alt icon-hover"></i> Company Profile</a>
             </nav>
         </div>
     </header>
@@ -542,36 +590,36 @@
             <button id="closeBtn" class="text-2xl focus:outline-none cursor-pointer" aria-label="Close menu">×</button>
         </div>
         <nav class="flex flex-col p-4 space-y-4">
-            <a href="index.html" class="nav-item hover:text-blue-600">Home</a>
-            <a href="about.html" class="nav-item hover:text-blue-600">About Us</a>
-            <a href="services.html" class="nav-item hover:text-blue-600" id="mobileServicesToggle">Services
+            <a href="index.html" class="nav-item hover:text-blue-600"><i class="fas fa-home icon-hover mr-1"></i> Home</a>
+            <a href="about.html" class="nav-item hover:text-blue-600"><i class="fas fa-info-circle icon-hover mr-1"></i> About Us</a>
+            <a href="services.html" class="nav-item hover:text-blue-600" id="mobileServicesToggle"><i class="fas fa-cogs icon-hover mr-1"></i> Services
                 <svg class="toggle-indicator" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
             </a>
             <div id="mobileServicesMenu" class="flex flex-col space-y-2 pl-4 hidden">
-                <a href="brokerage.html" class="hover:bg-gray-100 hover:text-blue-600">Ship Brokerage & Chartering</a>
+                <a href="Brokerage.html" class="hover:bg-gray-100 hover:text-blue-600">Ship Brokerage & Chartering</a>
                 <a href="logistics.html" class="hover:bg-gray-100 hover:text-blue-600">Marine Logistics and Consultancy</a>
-                <a href="procurement.html" class="hover:bg-gray-100 hover:text-blue-600">Procurement</a>
+                <a href="Procurement.html" class="hover:bg-gray-100 hover:text-blue-600">Procurement</a>
                 <a href="offshore.html" class="hover:bg-gray-100 hover:text-blue-600">Offshore Support</a>
             </div>
-            <a href="contact.html" class="nav-item hover:text-blue-600">Contact Us</a>
-            <a href="https://example.com/profile" class="gradient-btn"><i class="fas fa-file-alt"></i> Company Profile</a>
+            <a href="contact.html" class="nav-item hover:text-blue-600"><i class="fas fa-envelope icon-hover mr-1"></i> Contact Us</a>
+            <a href="https://example.com/profile" class="gradient-btn"><i class="fas fa-file-alt icon-hover"></i> Company Profile</a>
         </nav>
     </div>
 
     <!-- Brokerage Hero Section -->
     <section class="hero-bg text-white text-center px-6 py-24">
-        <div class="hero-bg-inner active" style="background-image: url('./Images/brokerage_hero.jpg');"></div>
+        <div class="hero-bg-inner" style="background-image: url('./Images/second_hero.jpg');"></div>
         <div class="w-full max-w-5xl mx-auto px-6 md:px-12 lg:px-20">
             <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight hero-text">
-                <i class="fas fa-ship text-red-600 mr-2"></i> Ship Brokerage & Chartering
+                <i class="fas fa-ship values-icon icon-hover mr-2"></i> Ship Brokerage & Chartering
             </h1>
             <p class="mt-4 text-sm sm:text-base md:text-lg lg:text-lg text-gray-200 max-w-3xl mx-auto hero-subtext">
                 Seamless vessel acquisition, chartering, and management tailored to your maritime needs.
             </p>
             <div class="mt-3 hero-button">
-                <a href="#brokerage" class="gradient-btn" aria-label="Explore Ship Brokerage"><i class="fas fa-anchor"></i> Explore Service</a>
+                <a href="#brokerage" class="gradient-btn" aria-label="Explore Ship Brokerage"><i class="fas fa-anchor icon-hover"></i> Explore Service</a>
             </div>
         </div>
     </section>
@@ -587,35 +635,35 @@
                     <h2 class="text-3xl font-bold mb-4 text-gray-800 text-left">
                         <span class="l-accent-top"></span>
                         <span class="l-accent-left"></span>
-                        <i class="fas fa-ship text-red-600 mr-2"></i> Ship Brokerage & Chartering
+                        <i class="fas fa-ship values-icon icon-hover mr-2"></i> Ship Brokerage & Chartering
                     </h2>
                 </div>
                 <div class="flex-1 flex flex-col justify-between gap-6">
                     <p class="text-gray-600">
                         At Eshua Ofe Marine Limited, our Ship Brokerage and Chartering services connect clients with the right vessels for their operational needs. We facilitate the acquisition, sale, and chartering of vessels, ensuring seamless transactions and compliance with industry standards. Our expertise spans commercial shipping, offshore oil and gas, and specialized maritime projects.
                     </p>
-                    <ul class="list-none space-y-4 text-gray-600">
+                    <ul class="list-none space-y-4 text-gray-600 brokerage-list">
                         <li class="flex items-start gap-2">
-                            <i class="fas fa-shopping-cart text-lg text-blue-700 icon-hover"></i>
+                            <i class="fas fa-shopping-cart text-lg icon-hover"></i>
                             <span><b>Vessel Acquisition and Sales:</b> Sourcing and negotiating the purchase or sale of vessels tailored to client specifications.</span>
                         </li>
                         <li class="flex items-start gap-2">
-                            <i class="fas fa-anchor text-lg text-blue-700 icon-hover"></i>
+                            <i class="fas fa-anchor text-lg icon-hover"></i>
                             <span><b>Chartering Solutions:</b> Arranging time, voyage, or bareboat charters for various vessel types, including supply vessels and crew boats.</span>
                         </li>
                         <li class="flex items-start gap-2">
-                            <i class="fas fa-globe text-lg text-blue-700 icon-hover"></i>
+                            <i class="fas fa-globe text-lg icon-hover"></i>
                             <span><b>Market Expertise:</b> Leveraging global networks to provide competitive rates and reliable vessels.</span>
                         </li>
                         <li class="flex items-start gap-2">
-                            <i class="fas fa-file-alt text-lg text-blue-700 icon-hover"></i>
+                            <i class="fas fa-file-alt text-lg icon-hover"></i>
                             <span><b>Compliance and Documentation:</b> Ensuring all transactions meet regulatory and safety standards.</span>
                         </li>
                     </ul>
                     <p class="text-gray-600">
                         Our team works closely with shipowners, operators, and clients to deliver cost-effective and efficient solutions, ensuring operational success in the Gulf of Guinea and beyond.
                     </p>
-                    <a href="contact.html" class="gradient-btn mt-auto"><i class="fas fa-envelope"></i> Get in Touch</a>
+                    <a href="contact.html" class="gradient-btn mt-auto"><i class="fas fa-envelope icon-hover"></i> Get in Touch</a>
                 </div>
             </div>
             <div class="fly-in flex items-center">
@@ -634,28 +682,46 @@
                 <h2 class="text-3xl font-bold mb-6 text-gray-800 text-left">
                     <span class="l-accent-top"></span>
                     <span class="l-accent-left"></span>
-                    <i class="fas fa-project-diagram text-red-600 mr-2"></i> Recent Brokerage Projects
+                    <i class="fas fa-project-diagram values-icon icon-hover mr-2"></i> Recent Brokerage Projects
                 </h2>
             </div>
             <div class="project-grid fly-in">
                 <div class="project-card">
-                    <img src="./Images/project1.jpg" alt="Vessel Chartering Project" />
+                    <img src="./Services_images/Brokerage_1.jpeg" alt="Offshore Supply Vessel Charter" class="project-image" />
                     <div class="project-overlay">
-                        <i class="fas fa-ship text-2xl mb-2"></i>
-                        <h3 class="text-lg font-bold">Offshore Oil Vessel Charter</h3>
+                        <i class="fas fa-ship text-2xl mb-2 icon-hover"></i>
+                        <h3 class="text-lg font-bold">Offshore Supply Vessel Charter</h3>
                         <p>Chartered a fleet of platform supply vessels for a major oil and gas project in Nigeria, ensuring timely and safe operations.</p>
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="./Images/project2.jpg" alt="Vessel Acquisition" />
+                    <img src="./Services_images/Brokerage_2.jpeg" alt="Crew Transfer Vessel Acquisition" class="project-image" />
                     <div class="project-overlay">
-                        <i class="fas fa-wind text-2xl mb-2"></i>
-                        <h3 class="text-lg font-bold">Vessel Acquisition for Wind Farm</h3>
+                        <i class="fas fa-wind text-2xl mb-2 icon-hover"></i>
+                        <h3 class="text-lg font-bold">Crew Transfer Vessel Acquisition</h3>
                         <p>Facilitated the purchase of a crew transfer vessel for an offshore wind farm project, meeting stringent regulatory requirements.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="./Services_images/Brokerage_3.jpeg" alt="Tugboat Charter" class="project-image" />
+                    <div class="project-overlay">
+                        <i class="fas fa-anchor text-2xl mb-2 icon-hover"></i>
+                        <h3 class="text-lg font-bold">Tugboat Charter</h3>
+                        <p>Arranged a time charter for tugboats supporting a port expansion project, optimizing operational efficiency.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="./Services_images/Brokerage_4.jpeg" alt="Vessel Sale for Commercial Shipping" class="project-image" />
+                    <div class="project-overlay">
+                        <i class="fas fa-shopping-cart text-2xl mb-2 icon-hover"></i>
+                        <h3 class="text-lg font-bold">Vessel Sale for Commercial Shipping</h3>
+                        <p>Negotiated the sale of a cargo vessel for a client, ensuring compliance with international maritime regulations.</p>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="zoomed-overlay"></div>
+        <img class="zoomed-image" src="" alt="Zoomed Project Image" />
     </section>
 
     <!-- Spacer before CTA -->
@@ -664,26 +730,26 @@
     <!-- Ready to Work with Us Section -->
     <section id="cta" class="py-16 px-6 section-container my-8 md:my-16">
         <h3 class="text-3xl font-bold text-center mb-8 text-white">
-            <i class="fas fa-handshake text-red-600 mr-2"></i> Ready to Work with Us?
+            <i class="fas fa-handshake values-icon icon-hover mr-2"></i> Ready to Work with Us?
         </h3>
         <p class="text-center text-gray-200 max-w-2xl mx-auto mb-12">
             Let’s collaborate to find the perfect vessel for your project. Fill out the form below, and our team will respond promptly.
         </p>
         <form id="contactForm" class="contact-form space-y-6" action="#" method="POST">
             <div>
-                <label for="name" class="text-sm"><i class="fas fa-user text-blue-700 icon-hover"></i> Your Name <span class="text-red-600">*</span></label>
+                <label for="name" class="text-sm"><i class="fas fa-user contact-form-icon icon-hover"></i> Your Name <span class="text-red-600">*</span></label>
                 <input type="text" id="name" name="name" placeholder="Enter your name" class="w-full" required aria-label="Your Name" />
             </div>
             <div>
-                <label for="email" class="text-sm"><i class="fas fa-envelope text-blue-700 icon-hover"></i> Your Email <span class="text-red-600">*</span></label>
+                <label for="email" class="text-sm"><i class="fas fa-envelope contact-form-icon icon-hover"></i> Your Email <span class="text-red-600">*</span></label>
                 <input type="email" id="email" name="email" placeholder="Enter your email" class="w-full" required aria-label="Your Email" />
             </div>
             <div>
-                <label for="phone" class="text-sm"><i class="fas fa-phone text-blue-700 icon-hover"></i> Your Phone Number</label>
+                <label for="phone" class="text-sm"><i class="fas fa-phone contact-form-icon icon-hover"></i> Your Phone Number</label>
                 <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" class="w-full" aria-label="Your Phone Number" />
             </div>
             <div>
-                <label for="interest" class="text-sm"><i class="fas fa-list text-blue-700 icon-hover"></i> Area of Interest</label>
+                <label for="interest" class="text-sm"><i class="fas fa-list contact-form-icon icon-hover"></i> Area of Interest</label>
                 <select id="interest" name="interest" class="w-full" aria-label="Select Area of Interest">
                     <option value="" disabled>Select an option</option>
                     <option value="brokerage" selected>Ship Brokerage & Chartering</option>
@@ -695,18 +761,18 @@
             <div>
                 <label class="checkbox-label">
                     <input type="checkbox" id="quote" name="quote" aria-label="Request a Quote" />
-                    <i class="fas fa-file-invoice-dollar text-blue-700 icon-hover"></i> Request a Quote
+                    <i class="fas fa-file-invoice-dollar contact-form-icon icon-hover"></i> Request a Quote
                 </label>
             </div>
             <div>
-                <label for="message" class="text-sm"><i class="fas fa-comment text-blue-700 icon-hover"></i> Your Message <span class="text-red-600">*</span></label>
+                <label for="message" class="text-sm"><i class="fas fa-comment contact-form-icon icon-hover"></i> Your Message <span class="text-red-600">*</span></label>
                 <textarea id="message" name="message" placeholder="Enter your message" class="w-full" required aria-label="Your Message"></textarea>
             </div>
             <div class="text-center">
-                <button type="submit" class="gradient-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+                <button type="submit" class="gradient-btn"><i class="fas fa-paper-plane icon-hover"></i> Send Message</button>
             </div>
             <div id="successMessage" class="success-message">
-                <i class="fas fa-check-circle"></i> Response has been sent
+                <i class="fas fa-check-circle contact-form-icon"></i> Response has been sent
             </div>
         </form>
     </section>
@@ -715,10 +781,10 @@
     <footer class="text-center">
         <div class="container mx-auto px-6">
             <nav class="flex justify-center space-x-6 mb-4">
-                <a href="index.html" class="hover:text-red-600"><i class="fas fa-home mr-1"></i> Home</a>
-                <a href="about.html" class="hover:text-red-600"><i class="fas fa-info-circle mr-1"></i> About Us</a>
-                <a href="services.html" class="hover:text-red-600"><i class="fas fa-cogs mr-1"></i> Services</a>
-                <a href="contact.html" class="hover:text-red-600"><i class="fas fa-envelope mr-1"></i> Contact Us</a>
+                <a href="index.html" class="hover:text-red-600"><i class="fas fa-home icon-hover mr-1"></i> Home</a>
+                <a href="about.html" class="hover:text-red-600"><i class="fas fa-info-circle icon-hover mr-1"></i> About Us</a>
+                <a href="services.html" class="hover:text-red-600"><i class="fas fa-cogs icon-hover mr-1"></i> Services</a>
+                <a href="contact.html" class="hover:text-red-600"><i class="fas fa-envelope icon-hover mr-1"></i> Contact Us</a>
             </nav>
         </div>
         <div style="background: #fff; color: #074672; width: 100vw; margin-left: calc(50% - 50vw); padding: 1.5rem 0;">
@@ -743,23 +809,23 @@
             </div>
             <div class="footer-contact flex flex-col items-center gap-1 mt-6 text-xs md:text-sm" style="line-height:1.3;">
                 <div class="flex items-center gap-2">
-                    <i class="fas fa-map-marker-alt text-sm text-red-600 icon-hover"></i>
+                    <i class="fas fa-map-marker-alt text-sm icon-hover"></i>
                     <span><strong>Head Office:</strong> #41, 323 Old Refinery Road, Elelenwo, by Lobak Filling Station, Port Harcourt, Rivers State.</span>
                 </div>
                 <div class="flex items-center gap-2">
-                    <i class="fas fa-map-marker-alt text-sm text-red-600 icon-hover"></i>
+                    <i class="fas fa-map-marker-alt text-sm icon-hover"></i>
                     <span><strong>Head Office:</strong> 11B Old Court Road, Abakpa, Ogoja, Cross Rivers State, Nigeria</span>
                 </div>
                 <div class="flex items-center gap-2">
-                    <i class="fas fa-map-marker-alt text-sm text-red-600 icon-hover"></i>
+                    <i class="fas fa-map-marker-alt text-sm icon-hover"></i>
                     <span><strong>Branch Office:</strong> The Amasu Igboro Street, Ijanikin, Ojo Local Government Area, Lagos State, Nigeria</span>
                 </div>
                 <div class="flex items-center gap-2">
-                    <i class="fas fa-globe text-sm text-blue-700 icon-hover"></i>
+                    <i class="fas fa-globe text-sm icon-hover"></i>
                     <a href="https://www.eshuaofemarineltd.com" target="_blank" class="footer-contact-link">www.eshuaofemarineltd.com</a>
                 </div>
                 <div class="flex items-center gap-2">
-                    <i class="fas fa-envelope text-sm text-blue-700 icon-hover"></i>
+                    <i class="fas fa-envelope text-sm icon-hover"></i>
                     <a href="mailto:info@eshuaofemarineltd.com" class="footer-contact-link">info@eshuaofemarineltd.com</a>
                 </div>
             </div>
@@ -827,6 +893,27 @@
         overlay.addEventListener('click', closeMenu);
         mobileMenu.querySelectorAll('a:not(#mobileServicesToggle)').forEach(link => {
             link.addEventListener('click', closeMenu);
+        });
+
+        // Project image zoom functionality
+        const projectCards = document.querySelectorAll('.project-card');
+        const zoomedImage = document.querySelector('.zoomed-image');
+        const zoomedOverlay = document.querySelector('.zoomed-overlay');
+
+        projectCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const imgSrc = card.querySelector('img').src;
+                zoomedImage.src = imgSrc;
+                zoomedImage.classList.add('active');
+                zoomedOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        zoomedOverlay.addEventListener('click', () => {
+            zoomedImage.classList.remove('active');
+            zoomedOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
         });
 
         document.addEventListener('DOMContentLoaded', () => {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="Images/logo.png" />
+    <link rel="icon" type="image/png" href="./Images/logo.png" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Eshua Ofe Marine Limited delivers reliable oil, gas, and infrastructure solutions across upstream, midstream, and downstream sectors. Explore our expertise." />
@@ -13,20 +13,20 @@
     <meta property="og:description" content="Providing reliable services in Electrical, Civil, Mechanical, Supply, and Oil & Gas operations across upstream, midstream, and downstream sectors." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.eshuaofemarine.com/" />
-    <meta property="og:image" content="https://www.eshuaofemarine.com/images/og-image.jpg" />
+    <meta property="og:image" content="https://www.eshuaofemarine.com/Images/og-image.jpg" />
     <meta property="og:site_name" content="Eshua Ofe Marine Limited" />
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Eshua Ofe Marine Limited - Oil, Gas, and Infrastructure Solutions" />
     <meta name="twitter:description" content="Providing reliable services in Electrical, Civil, Mechanical, Supply, and Oil & Gas operations across upstream, midstream, and downstream sectors." />
-    <meta name="twitter:image" content="https://www.eshuaofemarine.com/images/og-image.jpg" />
+    <meta name="twitter:image" content="https://www.eshuaofemarine.com/Images/og-image.jpg" />
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.eshuaofemarine.com/" />
     <title>Eshua Ofe Marine Limited - Oil, Gas, and Infrastructure Solutions</title>
     <!-- Tailwind CSS (Local) -->
     <link rel="stylesheet" href="./tailwind.min.css">
     <!-- Font Awesome CDN for services and social icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
     <!-- Google Fonts: Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Structured Data (JSON-LD) -->
@@ -37,7 +37,7 @@
         "name": "Eshua Ofe Marine Limited",
         "description": "Eshua Ofe Marine Limited delivers comprehensive oil, gas, and infrastructure solutions across upstream, midstream, and downstream sectors, including Electrical, Civil, Mechanical, and Supply services.",
         "url": "https://www.eshuaofemarine.com/",
-        "logo": "https://www.eshuaofemarine.com/images/logo_name.png",
+        "logo": "https://www.eshuaofemarine.com/Images/logo_name.png",
         "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+1-555-123-4567",
@@ -138,6 +138,14 @@
             .gradient-btn {
                 padding: 0.5rem 1rem;
                 font-size: 0.875rem;
+            }
+            /* Footer navigation for mobile */
+            footer nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            footer nav a {
+                text-align: center;
             }
         }
         /* Dropdown styles */
@@ -557,6 +565,10 @@
         .group:hover .fas.fa-arrow-right {
             color: #FFFFFF; /* Ensure icons are white on hover */
         }
+        /* Our Trusted Clientele Icon */
+        .clientele-icon {
+            color: #F70622; /* Red icon for Our Trusted Clientele */
+        }
         /* About Section */
         #about {
             position: relative;
@@ -733,6 +745,74 @@
             z-index: 2;
             transition: box-shadow 0.3s;
         }
+        /* Responsive Text Adjustments */
+        .nav-item {
+            font-size: 0.875rem;
+        }
+        .dropdown-menu a {
+            font-size: 0.875rem;
+        }
+        .gradient-btn, .square-btn {
+            font-size: 0.875rem;
+        }
+        .contact-form label, .contact-form input, .contact-form select, .contact-form textarea {
+            font-size: 0.875rem;
+        }
+        .success-message {
+            font-size: 0.875rem;
+        }
+        footer .container nav a {
+            font-size: 0.875rem;
+        }
+        .footer-contact, .footer-contact span {
+            font-size: 0.75rem;
+        }
+        .footer-contact i {
+            font-size: 0.75rem;
+        }
+        footer p {
+            font-size: 0.75rem;
+        }
+        .social-section a i {
+            font-size: 1rem;
+        }
+        @media (min-width: 768px) {
+            .nav-item {
+                font-size: 1rem;
+            }
+            .dropdown-menu a {
+                font-size: 1rem;
+            }
+            .gradient-btn, .square-btn {
+                font-size: 1rem;
+            }
+            .contact-form label, .contact-form input, .contact-form select, .contact-form textarea {
+                font-size: 1rem;
+            }
+            .success-message {
+                font-size: 1rem;
+            }
+            footer .container nav a {
+                font-size: 1rem;
+            }
+            .footer-contact, .footer-contact span {
+                font-size: 0.875rem;
+            }
+            .footer-contact i {
+                font-size: 0.875rem;
+            }
+            footer p {
+                font-size: 0.875rem;
+            }
+            .social-section a i {
+                font-size: 1.25rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .social-section a i {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
@@ -757,10 +837,10 @@
                     </svg>
                 </a>
                 <div class="dropdown-menu hidden">
-                    <a href="services.html#brokerage" class="hover:bg-gray-100 hover:text-blue-600">Ship Brokerage & Chartering</a>
-                    <a href="services.html#logistics" class="hover:bg-gray-100 hover:text-blue-600">Marine Logistics and Consultancy</a>
-                    <a href="services.html#procurement" class="hover:bg-gray-100 hover:text-blue-600">Procurement</a>
-                    <a href="services.html#offshore" class="hover:bg-gray-100 hover:text-blue-600">Offshore Support</a>
+                    <a href="Brokerage.html" class="hover:bg-gray-100 hover:text-blue-600">Ship Brokerage & Chartering</a>
+                    <a href="logistics.html" class="hover:bg-gray-100 hover:text-blue-600">Marine Logistics and Consultancy</a>
+                    <a href="Procurement.html" class="hover:bg-gray-100 hover:text-blue-600">Procurement</a>
+                    <a href="offshore.html" class="hover:bg-gray-100 hover:text-blue-600">Offshore Support</a>
                 </div>
             </div>
             <a href="contact.html" class="nav-item hover:text-blue-600">
@@ -788,12 +868,12 @@
             </svg>
         </a>
         <div id="mobileServicesMenu" class="flex flex-col space-y-2 pl-4 hidden">
-            <a href="services.html#brokerage" class="hover:bg-gray-100 hover:text-blue-600">Ship Brokerage & Chartering</a>
-            <a href="services.html#logistics" class="hover:bg-gray-100 hover:text-blue-600">Marine Logistics and Consultancy</a>
-            <a href="services.html#procurement" class="hover:bg-gray-100 hover:text-blue-600">Procurement</a>
-            <a href="services.html#offshore" class="hover:bg-gray-100 hover:text-blue-600">Offshore Support</a>
+            <a href="Brokerage.html" class="hover:bg-gray-100 hover:text-blue-600">Ship Brokerage & Chartering</a>
+            <a href="logistics.html" class="hover:bg-gray-100 hover:text-blue-600">Marine Logistics and Consultancy</a>
+            <a href="Procurement.html" class="hover:bg-gray-100 hover:text-blue-600">Procurement</a>
+            <a href="offshore.html" class="hover:bg-gray-100 hover:text-blue-600">Offshore Support</a>
         </div>
-    <a href="contact.html" class="nav-item hover:text-blue-600"><i class="fas fa-envelope mr-1"></i>Contact Us</a>
+        <a href="contact.html" class="nav-item hover:text-blue-600"><i class="fas fa-envelope mr-1"></i>Contact Us</a>
         <a href="https://example.com/profile" class="gradient-btn"><i class="fas fa-file-alt icon-hover" style="color: #FFFFFF;"></i> Company Profile</a>
     </nav>
 </div>
@@ -813,7 +893,7 @@
             We provide integrated and reliable services that connect clients with best marine resources, delivering values, safety, and operational success in every project.
         </p>
         <div class="mt-6 hero-button">
-            <a href="services.html" class="gradient-btn"><i class="fas fa-search-plus icon-hover" style="color: #FFFFFF;"></i> Explore More</a>
+            <a href="about.html" class="gradient-btn"><i class="fas fa-search-plus icon-hover" style="color: #FFFFFF;"></i> Explore More</a>
         </div>
     </div>
 </section>
@@ -870,7 +950,7 @@
                 </div>
                 <div class="flex justify-end items-center space-x-4">
                     <i class="fas fa-search-plus text-xl icon-hover" style="color: #FFFFFF;"></i>
-                    <a href="services.html#brokerage" class="gradient-btn text-white text-sm font-medium"><i class="fas fa-arrow-right icon-hover" style="color: #FFFFFF;"></i> See More</a>
+                    <a href="Brokerage.html" class="gradient-btn text-white text-sm font-medium"><i class="fas fa-arrow-right icon-hover" style="color: #FFFFFF;"></i> See More</a>
                 </div>
             </div>
         </div>
@@ -889,7 +969,7 @@
                 </div>
                 <div class="flex justify-end items-center space-x-4">
                     <i class="fas fa-search-plus text-xl icon-hover" style="color: #FFFFFF;"></i>
-                    <a href="services.html#logistics" class="gradient-btn text-white text-sm font-medium"><i class="fas fa-arrow-right icon-hover" style="color: #FFFFFF;"></i> See More</a>
+                    <a href="logistics.html" class="gradient-btn text-white text-sm font-medium"><i class="fas fa-arrow-right icon-hover" style="color: #FFFFFF;"></i> See More</a>
                 </div>
             </div>
         </div>
@@ -908,7 +988,7 @@
                 </div>
                 <div class="flex justify-end items-center space-x-4">
                     <i class="fas fa-search-plus text-xl icon-hover" style="color: #FFFFFF;"></i>
-                    <a href="services.html#procurement" class="gradient-btn text-white text-sm font-medium"><i class="fas fa-arrow-right icon-hover" style="color: #FFFFFF;"></i> See More</a>
+                    <a href="Procurement.html" class="gradient-btn text-white text-sm font-medium"><i class="fas fa-arrow-right icon-hover" style="color: #FFFFFF;"></i> See More</a>
                 </div>
             </div>
         </div>
@@ -927,7 +1007,7 @@
                 </div>
                 <div class="flex justify-end items-center space-x-4">
                     <i class="fas fa-search-plus text-xl icon-hover" style="color: #FFFFFF;"></i>
-                    <a href="services.html#offshore" class="gradient-btn text-white text-sm font-medium"><i class="fas fa-arrow-right icon-hover" style="color: #FFFFFF;"></i> See More</a>
+                    <a href="offshore.html" class="gradient-btn text-white text-sm font-medium"><i class="fas fa-arrow-right icon-hover" style="color: #FFFFFF;"></i> See More</a>
                 </div>
             </div>
         </div>
@@ -938,7 +1018,7 @@
 <div class="relative z-10 w-4/5 mx-auto mt-20">
     <!-- Our Trusted Clientele -->
     <section class="mb-12">
-        <h2 class="text-3xl font-bold text-center mb-8"><i class="fas fa-handshake icon-hover mr-2" style="color: #FFFFFF;"></i> Our Trusted Clientele</h2>
+        <h2 class="text-3xl font-bold text-center mb-8"><i class="fas fa-handshake style="color: red;" clientele-icon icon-hover mr-2"></i> Our Trusted Clientele</h2>
         <div class="logo-slider-container no-scrollbar">
             <ul class="logo-slider client-slider" style="width: calc(9 * 200px * 2);">
                 <!-- Original 9 logos -->
@@ -974,7 +1054,7 @@
         Our team of seasoned maritime professionals and engineers combines technical expertise with a commitment to operational efficiency, helping clients navigate the complexities of marine operations.
     </p>
     <div class="mt-6 flex justify-center space-x-4">
-        <a href="about.html" class="square-btn"><i class="fas fa-search-plus icon-hover" style="color: #FFFFFF;"></i> Explore More</a>
+        <a href="services.html" class="square-btn"><i class="fas fa-search-plus icon-hover" style="color: #FFFFFF;"></i> Explore More</a>
         <a href="contact.html" class="square-btn"><i class="fas fa-file-invoice-dollar icon-hover" style="color: #FFFFFF;"></i> Get a Quote</a>
     </div>
 </section>
@@ -1239,7 +1319,7 @@
         const successMessage = document.getElementById('successMessage');
 
         if (contactForm && successMessage) {
-            contactForm.addEventListener('submit', (e) => {
+            contactForm.addEventListener(' three', (e) => {
                 e.preventDefault();
                 const name = document.getElementById('name').value.trim();
                 const email = document.getElementById('email').value.trim();
