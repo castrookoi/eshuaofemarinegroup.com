@@ -11,14 +11,14 @@
     <meta property="og:title" content="Ship Brokerage & Chartering - Eshua Ofe Marine Limited" />
     <meta property="og:description" content="Discover our expert ship brokerage and chartering services for seamless vessel acquisition and management." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.eshuaofemarine.com/Brokerage.html" />
-    <meta property="og:image" content="https://www.eshuaofemarine.com/Images/og-brokerage-image.jpg" />
+    <meta property="og:url" content="https://www.eshuaofemarinelimited.com/Brokerage.html" />
+    <meta property="og:image" content="https://www.eshuaofemarinelimited.com/Images/og-brokerage-image.jpg" />
     <meta property="og:site_name" content="Eshua Ofe Marine Limited" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Ship Brokerage & Chartering - Eshua Ofe Marine Limited" />
     <meta name="twitter:description" content="Discover our expert ship brokerage and chartering services for seamless vessel acquisition and management." />
-    <meta name="twitter:image" content="https://www.eshuaofemarine.com/Images/og-brokerage-image.jpg" />
-    <link rel="canonical" href="https://www.eshuaofemarine.com/Brokerage.html" />
+    <meta name="twitter:image" content="https://www.eshuaofemarinelimited.com/Images/og-brokerage-image.jpg" />
+    <link rel="canonical" href="https://www.eshuaofemarinelimited.com/Brokerage.html" />
     <title>Ship Brokerage & Chartering - Eshua Ofe Marine Limited</title>
     <link rel="stylesheet" href="./tailwind.min.css" />
     <link rel="stylesheet" href="./fontawesome/css/all.min.css" />
@@ -31,8 +31,8 @@
         "provider": {
             "@type": "Organization",
             "name": "Eshua Ofe Marine Limited",
-            "url": "https://www.eshuaofemarine.com",
-            "logo": "https://www.eshuaofemarine.com/Images/logo_name.png"
+            "url": "https://www.eshuaofemarinelimited.com",
+            "logo": "https://www.eshuaofemarinelimited.com/Images/logo_name.png"
         },
         "description": "Eshua Ofe Marine Limited provides expert ship brokerage and chartering services, facilitating vessel acquisition, chartering, and management for maritime operations.",
         "areaServed": "Global"
@@ -487,6 +487,21 @@
         .success-message.show {
             display: block;
         }
+        .error-message {
+            display: none;
+            text-align: center;
+            color: #dc2626;
+            font-weight: 500;
+            margin-top: 1rem;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 0.375rem;
+            border: 1px solid #dc2626;
+            animation: fadeIn 0.5s ease-out;
+        }
+        .error-message.show {
+            display: block;
+        }
         .l-accent-top {
             position: absolute;
             top: -10px;
@@ -576,7 +591,7 @@
                     </div>
                 </div>
                 <a href="contact.html" class="nav-item hover:text-blue-600"><i class="fas fa-envelope icon-hover mr-1"></i> Contact Us</a>
-                <a href="https://example.com/profile" class="gradient-btn"><i class="fas fa-file-alt icon-hover"></i> Company Profile</a>
+                <a href="./Company_Profile.pdf" class="gradient-btn"><i class="fas fa-file-alt icon-hover"></i> Company Profile</a>
             </nav>
         </div>
     </header>
@@ -604,7 +619,7 @@
                 <a href="offshore.html" class="hover:bg-gray-100 hover:text-blue-600">Offshore Support</a>
             </div>
             <a href="contact.html" class="nav-item hover:text-blue-600"><i class="fas fa-envelope icon-hover mr-1"></i> Contact Us</a>
-            <a href="https://example.com/profile" class="gradient-btn"><i class="fas fa-file-alt icon-hover"></i> Company Profile</a>
+            <a href="./Company_Profile.pdf" class="gradient-btn"><i class="fas fa-file-alt icon-hover"></i> Company Profile</a>
         </nav>
     </div>
 
@@ -735,7 +750,7 @@
         <p class="text-center text-gray-200 max-w-2xl mx-auto mb-12">
             Let’s collaborate to find the perfect vessel for your project. Fill out the form below, and our team will respond promptly.
         </p>
-        <form id="contactForm" class="contact-form space-y-6" action="#" method="POST">
+        <form id="contactForm" class="contact-form space-y-6" action="send_email.php" method="POST">
             <div>
                 <label for="name" class="text-sm"><i class="fas fa-user contact-form-icon icon-hover"></i> Your Name <span class="text-red-600">*</span></label>
                 <input type="text" id="name" name="name" placeholder="Enter your name" class="w-full" required aria-label="Your Name" />
@@ -772,7 +787,10 @@
                 <button type="submit" class="gradient-btn"><i class="fas fa-paper-plane icon-hover"></i> Send Message</button>
             </div>
             <div id="successMessage" class="success-message">
-                <i class="fas fa-check-circle contact-form-icon"></i> Response has been sent
+                <i class="fas fa-check-circle contact-form-icon"></i> Message sent successfully
+            </div>
+            <div id="errorMessage" class="error-message">
+                <i class="fas fa-exclamation-circle contact-form-icon"></i> Failed to send message. Please try again.
             </div>
         </form>
     </section>
@@ -814,7 +832,7 @@
                 </div>
                 <div class="flex items-center gap-2">
                     <i class="fas fa-map-marker-alt text-sm icon-hover"></i>
-                    <span><strong>Head Office:</strong> 11B Old Court Road, Abakpa, Ogoja, Cross Rivers State, Nigeria</span>
+                    <span><strong>Secondary Office:</strong> 11B Old Court Road, Abakpa, Ogoja, Cross Rivers State, Nigeria</span>
                 </div>
                 <div class="flex items-center gap-2">
                     <i class="fas fa-map-marker-alt text-sm icon-hover"></i>
@@ -822,11 +840,19 @@
                 </div>
                 <div class="flex items-center gap-2">
                     <i class="fas fa-globe text-sm icon-hover"></i>
-                    <a href="https://www.eshuaofemarineltd.com" target="_blank" class="footer-contact-link">www.eshuaofemarineltd.com</a>
+                    <a href="https://www.eshuaofemarinelimited.com" target="_blank" class="footer-contact-link">www.eshuaofemarinelimited.com</a>
                 </div>
                 <div class="flex items-center gap-2">
                     <i class="fas fa-envelope text-sm icon-hover"></i>
-                    <a href="mailto:info@eshuaofemarineltd.com" class="footer-contact-link">info@eshuaofemarineltd.com</a>
+                    <a href="mailto:info@eshuaofemarinelimited.com" class="footer-contact-link">info@eshuaofemarinelimited.com</a>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-phone text-sm icon-hover"></i>
+                    <a href="tel:+2348111043774" class="footer-contact-link">+2348111043774</a>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-phone text-sm icon-hover"></i>
+                    <a href="tel:+2349071485840" class="footer-contact-link">+2349071485840</a>
                 </div>
             </div>
             <p class="mt-4">
@@ -951,25 +977,49 @@
             );
             darkSections.forEach(section => headerObserver.observe(section));
 
-            // Form submission handling
+            // Form submission handling with AJAX
             const contactForm = document.getElementById('contactForm');
             const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
 
-            if (contactForm && successMessage) {
-                contactForm.addEventListener('submit', (e) => {
+            if (contactForm && successMessage && errorMessage) {
+                contactForm.addEventListener('submit', async (e) => {
                     e.preventDefault();
                     const name = document.getElementById('name').value.trim();
                     const email = document.getElementById('email').value.trim();
                     const message = document.getElementById('message').value.trim();
 
-                    if (name && email && message) {
-                        successMessage.classList.add('show');
-                        contactForm.reset();
-                        setTimeout(() => {
-                            successMessage.classList.remove('show');
-                        }, 3000);
-                    } else {
-                        alert('Please fill out all required fields.');
+                    // Client-side validation
+                    if (!name || !email || !message) {
+                        errorMessage.textContent = '<i class="fas fa-exclamation-circle contact-form-icon"></i> Please fill out all required fields.';
+                        errorMessage.classList.add('show');
+                        setTimeout(() => errorMessage.classList.remove('show'), 3000);
+                        return;
+                    }
+
+                    // Prepare form data
+                    const formData = new FormData(contactForm);
+
+                    try {
+                        const response = await fetch('send_email.php', {
+                            method: 'POST',
+                            body: formData
+                        });
+                        const result = await response.json();
+
+                        if (result.success) {
+                            successMessage.classList.add('show');
+                            contactForm.reset();
+                            setTimeout(() => successMessage.classList.remove('show'), 3000);
+                        } else {
+                            errorMessage.textContent = `<i class="fas fa-exclamation-circle contact-form-icon"></i> ${result.message}`;
+                            errorMessage.classList.add('show');
+                            setTimeout(() => errorMessage.classList.remove('show'), 3000);
+                        }
+                    } catch (error) {
+                        errorMessage.textContent = '<i class="fas fa-exclamation-circle contact-form-icon"></i> An error occurred. Please try again.';
+                        errorMessage.classList.add('show');
+                        setTimeout(() => errorMessage.classList.remove('show'), 3000);
                     }
                 });
             }
